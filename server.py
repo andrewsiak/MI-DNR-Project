@@ -20,12 +20,12 @@ if __name__ == "__main__":
 def homepage():
     """View homepage."""
 
-    return render_template("homepage.html")
+    return render_template("index.html")
 
-@app.route("/locations")
-def all_movies():
-    """All locations."""
+# @app.route("/campgrounds")
+# def all_campgrounds():
+#     """All campgrounds."""
 
-    movies = crud.get_locations()
+#     campgrounds = crud.get_campgrounds()
 
-    return render_template("locations.html", movies=movies)
+#     return render_template("campgrounds.html", campgrounds=campgrounds)

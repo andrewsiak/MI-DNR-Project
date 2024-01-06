@@ -21,32 +21,30 @@ class User(db.Model):
 
 
     def __repr__(self):
-        return f"<User user_id={self.user_id}"
+        return f"<User user_id={self.user_id}>"
     
     
-class Location(db.Model):
-    """A location"""
+class Park(db.Model):
+    """A Park"""
 
-    __tablename__ = "locations"
+    __tablename__ = "parks"
 
-    location_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    map_data_id = db.Column(db.Integer, db.ForeignKey("map_data.map_data_id"))
+    park_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
+    # map_data_id = db.Column(db.Integer, db.ForeignKey("map_data.map_data_id"))
     address = db.Column(db.String)
-    city = db.Column(db.String)
-    zipcode = db.Column(db.Integer)
-    location_name = db.Column(db.String)
-    location_type = db.Column(db.String)
-    location_url = db.Column(db.String)
+    district = db.Column(db.String)
+    park_name = db.Column(db.String)
+    park_url = db.Column(db.String)
     description = db.Column(db.Text)
 
 
-    review = db.relationship("Review", back_populates="location")
-    wishlist = db.relationship("Wishlist", back_populates="location")
+    review = db.relationship("Review", back_populates="park")
+    wishlist = db.relationship("Wishlist", back_populates="park")
 
 
     def __repr__(self):
-        return f"<Location location_id={self.location_id}"
-    
+        return f"<Park park_id={self.park_id}>"
+
 
 class Map_data(db.Model):
     """A map"""
@@ -54,45 +52,49 @@ class Map_data(db.Model):
     __tablename__ = "map_datas"
 
     map_data_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    lat = db.Column(db.String)
-    lng = db.Column(db.String)
+    district = db.Column(db.String)
+    facility = db.Column(db.String)
+    shape_area = db.Column(db.String)
+    shape_length = db.Column(db.String)
+    lat = db.Column(db.Float)
+    lng = db.Column(db.Float)
 
 
     def __repr__(self):
-        return f"<Map_data map_data_id={self.map_data_id}"
+        return f"<Map_data map_data_id={self.map_data_id}>"
     
 
     
 class Review(db.Model):
-    """A review for a location"""
+    """A review for a park"""
 
     __tablename__ = "reviews"
 
     review_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"))
-    location_id = db.Column(db.Integer, db.ForeignKey("location.location_id"))
+    # user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"))
+    # park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
     score = db.Column(db.Integer)
 
-    location = db.relationship("Location", back_populates="review")
+    park = db.relationship("Park", back_populates="review")
     user = db.relationship("User", back_populates="review")
 
     def __repr__(self):
-        return f"<Review review_id={self.review_id}"
+        return f"<Review review_id={self.review_id}>"
 
 
 class Wishlist(db.Model):
-    """user's location wishlist"""
+    """user's park wishlist"""
     __tablename__ = "wishlists"
 
     wishlist_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    user_id = db.Column(db.Integer, db.ForeignKey("wishlist.wishlist_id"))
-    location_id = db.Column(db.Integer, db.ForeignKey("location.location_id"))
+    # user_id = db.Column(db.Integer, db.ForeignKey("wishlist.wishlist_id"))
+    # park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
 
-    location = db.relationship("Location", back_populates="wishlist")
+    park = db.relationship("Park", back_populates="wishlist")
     user = db.relationship("User", back_populates="wishlist")
 
     def __repr__(self):
-        return f"<Wishlist wishlist_id={self.wishlist_id}"
+        return f"<Wishlist wishlist_id={self.wishlist_id}>"
     
 
 def connect_to_db(flask_app, db_uri="postgresql:///dnrproject", echo=True):
