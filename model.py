@@ -30,7 +30,7 @@ class Park(db.Model):
     __tablename__ = "parks"
 
     park_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    # map_data_id = db.Column(db.Integer, db.ForeignKey("map_data.map_data_id"))
+    map_data_id = db.Column(db.Integer, db.ForeignKey("map_data.map_data_id"))
     address = db.Column(db.String)
     district = db.Column(db.String)
     park_name = db.Column(db.String)
@@ -46,22 +46,24 @@ class Park(db.Model):
         return f"<Park park_id={self.park_id}>"
 
 
-class Map_data(db.Model):
+class Map_Data(db.Model):
     """A map"""
 
     __tablename__ = "map_datas"
 
     map_data_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
+    object_id = db.Column(db.Integer)
+    acres = db.Column(db.Integer)
     district = db.Column(db.String)
     facility = db.Column(db.String)
-    shape_area = db.Column(db.String)
-    shape_length = db.Column(db.String)
+    shape_area = db.Column(db.Float)
+    shape_length = db.Column(db.Float)
     lat = db.Column(db.Float)
     lng = db.Column(db.Float)
 
 
     def __repr__(self):
-        return f"<Map_data map_data_id={self.map_data_id}>"
+        return f"<Map_Data map_data_id={self.map_data_id}>"
     
 
     
@@ -71,8 +73,8 @@ class Review(db.Model):
     __tablename__ = "reviews"
 
     review_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    # user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"))
-    # park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"))
+    park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
     score = db.Column(db.Integer)
 
     park = db.relationship("Park", back_populates="review")
@@ -87,8 +89,8 @@ class Wishlist(db.Model):
     __tablename__ = "wishlists"
 
     wishlist_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    # user_id = db.Column(db.Integer, db.ForeignKey("wishlist.wishlist_id"))
-    # park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("wishlist.wishlist_id"))
+    park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
 
     park = db.relationship("Park", back_populates="wishlist")
     user = db.relationship("User", back_populates="wishlist")

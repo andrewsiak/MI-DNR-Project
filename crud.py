@@ -2,7 +2,7 @@
 
 """CRUD operations."""
 
-from model import db, User, Park, Review, Wishlist, Map_data, connect_to_db
+from model import db, User, Map_Data, Review, Wishlist, Map_Data, connect_to_db
 
 
 def create_user(email, password):
@@ -32,47 +32,59 @@ def get_user_by_email(email):
 
 
 
-
-
-def creat_park(objectid,facility, description, district, city, zipcode):
+def create_map(map_data_id, object_id, acres, district, facility, shape_area, shape_length):
     """Create and return a new park."""
 
-    park = Park(
-        objectid=objectid,
-        # facility=facility,
-        # district=district,
-        # city=city,
-        # zipcode=zipcode,
-        # description=description,
-        # park_image=park_image,
+    park_map = Map_Data(
+        map_data_id=map_data_id,
+        object_id=object_id,
+        acres=acres,
+        district=district,
+        facility=facility,
+        shape_area=shape_area,
+        shape_length=shape_length
     )
 
-
-    # park_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    # map_data_id = db.Column(db.Integer, db.ForeignKey("map_data.map_data_id"))
-    # address = db.Column(db.String)
-    # city = db.Column(db.String)
-    # zipcode = db.Column(db.Integer)
-    # park_name = db.Column(db.String)
-    # park_url = db.Column(db.String)
-    # description = db.Column(db.Text)
-    return park
+    return park_map
 
 
-def get_park():
+def get_map():
     """Return all park."""
 
-    return Park.query.all()
+    return Map_Data.query.all()
 
 
 
-def get_park_by_id(park_id):
+def get_map_by_id(map_data_id):
 
-    return Park.query.get(park_id)
-
-
+    return Map_Data.query.get(map_data_id)
 
 
+
+def create_review(score):
+    review = Review(
+        score=score
+    )
+
+    return review
+
+
+def get_review():
+
+    return Review.query.all()
+
+
+def create_wishlist(user_id):
+    wishlist = Wishlist(
+        user_id=user_id
+    )
+
+    return wishlist
+
+
+def get_wishlist():
+
+    return Wishlist.query.all()
 
 
 # def create_rating(user, movie, score):

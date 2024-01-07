@@ -14,17 +14,34 @@ model.connect_to_db(server.app)
 model.db.create_all()
 
 with open("/Users/Masedium/src/Project - MI DNR/data/arcgis.json") as f:
-    park_data = json.loads(f.read())
+    map_info = json.loads(f.read())
 
+    map_info = map_info["features"]
 
-parks_in_db = []
-for park in park_data:
-    park_name, district = (
-        park["park_name"],
-        park["district"]
+maps_in_db = []
+for attribute in map_info:
+    objectid, acres, district, facility, shape_area, shape_length = (
+        attribute["objectid"],
+        attribute["acres"],
+        attribute["district"],
+        attribute["facility"],
+        attribute["shape_area"],
+        attribute["shape_length"],
     )
-    db_park = crud.create_park(park_name, district)
-    parks_in_db.append(db_park)
+    db_map = crud.create_map(objectid, acres, district, facility, shape_area, shape_length)
+    maps_in_db.append(db_map)
+
+
+    # "features": [
+    #     {
+    #         "attributes": {
+    #             "OBJECTID": 3,
+    #             "ACRES": 311.141471,
+    #             "DISTRICT": "Plainwell",
+    #             "FACILITY": "Warren Woods State Park",
+    #             "Shape__Area": 1259149.8968277,
+    #             "Shape__Length": 4959.54938203082
+
 
 
 
