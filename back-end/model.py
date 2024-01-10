@@ -16,8 +16,8 @@ class User(db.Model):
     email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
 
-    review = db.relationship("Review", back_populates="user")
-    wishlist = db.relationship("Wishlist", back_populates="user")
+    # review = db.relationship("Review", back_populates="user")
+    # wishlist = db.relationship("Wishlist", back_populates="user")
 
 
     def __repr__(self):
@@ -30,7 +30,7 @@ class Park(db.Model):
     __tablename__ = "parks"
 
     park_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    map_data_id = db.Column(db.Integer, db.ForeignKey("map_data.map_data_id"))
+    # map_data_id = db.Column(db.Integer, db.ForeignKey("map_data.map_data_id"))
     address = db.Column(db.String)
     district = db.Column(db.String)
     park_name = db.Column(db.String)
@@ -38,8 +38,8 @@ class Park(db.Model):
     description = db.Column(db.Text)
 
 
-    review = db.relationship("Review", back_populates="park")
-    wishlist = db.relationship("Wishlist", back_populates="park")
+    # review = db.relationship("Review", back_populates="park")
+    # wishlist = db.relationship("Wishlist", back_populates="park")
 
 
     def __repr__(self):
@@ -73,12 +73,12 @@ class Review(db.Model):
     __tablename__ = "reviews"
 
     review_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"))
-    park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
+    # user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"))
+    # park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
     score = db.Column(db.Integer)
 
-    park = db.relationship("Park", back_populates="review")
-    user = db.relationship("User", back_populates="review")
+    # park = db.relationship("Park", back_populates="review")
+    # user = db.relationship("User", back_populates="review")
 
     def __repr__(self):
         return f"<Review review_id={self.review_id}>"
@@ -89,11 +89,11 @@ class Wishlist(db.Model):
     __tablename__ = "wishlists"
 
     wishlist_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    user_id = db.Column(db.Integer, db.ForeignKey("wishlist.wishlist_id"))
-    park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
+    # user_id = db.Column(db.Integer, db.ForeignKey("wishlist.wishlist_id"))
+    # park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
 
-    park = db.relationship("Park", back_populates="wishlist")
-    user = db.relationship("User", back_populates="wishlist")
+    # park = db.relationship("Park", back_populates="wishlist")
+    # user = db.relationship("User", back_populates="wishlist")
 
     def __repr__(self):
         return f"<Wishlist wishlist_id={self.wishlist_id}>"

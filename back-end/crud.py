@@ -32,17 +32,18 @@ def get_user_by_email(email):
 
 
 
-def create_map(map_data_id, object_id, acres, district, facility, shape_area, shape_length):
-    """Create and return a new park."""
+def create_map(object_id, acres, district, facility, shape_area, shape_length, lat, lng):
+    """Create and return a new map."""
 
     park_map = Map_Data(
-        map_data_id=map_data_id,
         object_id=object_id,
         acres=acres,
         district=district,
         facility=facility,
         shape_area=shape_area,
-        shape_length=shape_length
+        shape_length=shape_length,
+        lat=lat,
+        lng=lng
     )
 
     return park_map
@@ -104,3 +105,5 @@ if __name__ == "__main__":
     from server import app
 
     connect_to_db(app)
+
+

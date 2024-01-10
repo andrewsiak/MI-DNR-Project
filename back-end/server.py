@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, flash, session, redirect
 from model import connect_to_db
 import crud
@@ -10,17 +11,19 @@ app.jinja_env.undefined = StrictUndefined
 
 
 
-if __name__ == "__main__":
-    connect_to_db(app)
-    app.run(host="0.0.0.0", debug=True)
-
 
 
 @app.route("/")
 def homepage():
     """View homepage."""
 
-    return render_template("index.html")
+    return render_template("homepage.html")
+
+@app.route("/test")
+def test_page():
+    """View test page."""
+
+    return render_template("test.html")
 
 # @app.route("/campgrounds")
 # def all_campgrounds():
@@ -29,3 +32,12 @@ def homepage():
 #     campgrounds = crud.get_campgrounds()
 
 #     return render_template("campgrounds.html", campgrounds=campgrounds)
+
+
+if __name__ == "__main__":
+    # with app.appcontext:
+            
+    connect_to_db(app)
+    app.run(host="0.0.0.0", debug=True)
+
+    
