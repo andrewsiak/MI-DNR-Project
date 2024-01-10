@@ -1,5 +1,8 @@
 
 *secrets.sh
+*/env
+*package-lock.json
+
 
 # Logs
 *logs
@@ -21,3 +24,4 @@
 *.njsproj
 *.sln
 *.sw?
+
