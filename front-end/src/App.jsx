@@ -5,7 +5,7 @@ import './App.css'
 import Header from './components/header/Header'
 import Home from './components/home/Home'
 import About from './components/about/About'
-import Nav_bar from './components/navbar/Nav_bar'
+import Nav_bar from './components/nav_bar/Nav_bar'
 
 
 function App() {

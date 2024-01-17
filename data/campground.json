@@ -1,0 +1,1888 @@
+{
+    "objectIdFieldName": "OBJECTID",
+    "uniqueIdField": {"name": "OBJECTID", "isSystemMaintained": true},
+    "globalIdFieldName": "",
+    "geometryType": "esriGeometryPoint",
+    "spatialReference": {"wkid": 4326, "latestWkid": 4326},
+    "fields": [
+        {
+            "name": "County",
+            "type": "esriFieldTypeSmallInteger",
+            "alias": "County",
+            "sqlType": "sqlTypeOther",
+            "domain": {
+                "type": "codedValue",
+                "name": "dom_counties",
+                "mergePolicy": "esriMPTDefaultValue",
+                "splitPolicy": "esriSPTDefaultValue",
+                "description": "County Name list",
+                "codedValues": [
+                    {"name": "Unspecified"   , "code":  0},
+                    {"name": "Alcona"        , "code":  1},
+                    {"name": "Alger"         , "code":  2},
+                    {"name": "Allegan"       , "code":  3},
+                    {"name": "Alpena"        , "code":  4},
+                    {"name": "Antrim"        , "code":  5},
+                    {"name": "Arenac"        , "code":  6},
+                    {"name": "Baraga"        , "code":  7},
+                    {"name": "Barry"         , "code":  8},
+                    {"name": "Bay"           , "code":  9},
+                    {"name": "Benzie"        , "code": 10},
+                    {"name": "Berrien"       , "code": 11},
+                    {"name": "Branch"        , "code": 12},
+                    {"name": "Calhoun"       , "code": 13},
+                    {"name": "Cass"          , "code": 14},
+                    {"name": "Charlevoix"    , "code": 15},
+                    {"name": "Cheboygan"     , "code": 16},
+                    {"name": "Chippewa"      , "code": 17},
+                    {"name": "Clare"         , "code": 18},
+                    {"name": "Clinton"       , "code": 19},
+                    {"name": "Crawford"      , "code": 20},
+                    {"name": "Delta"         , "code": 21},
+                    {"name": "Dickinson"     , "code": 22},
+                    {"name": "Eaton"         , "code": 23},
+                    {"name": "Emmet"         , "code": 24},
+                    {"name": "Genessee"      , "code": 25},
+                    {"name": "Gladwin"       , "code": 26},
+                    {"name": "Gogebic"       , "code": 27},
+                    {"name": "Grand Traverse", "code": 28},
+                    {"name": "Gratiot"       , "code": 29},
+                    {"name": "Hillsdale"     , "code": 30},
+                    {"name": "Houghton"      , "code": 31},
+                    {"name": "Huron"         , "code": 32},
+                    {"name": "Ingham"        , "code": 33},
+                    {"name": "Ionia"         , "code": 34},
+                    {"name": "Iosco"         , "code": 35},
+                    {"name": "Iron"          , "code": 36},
+                    {"name": "Isabella"      , "code": 37},
+                    {"name": "Jackson"       , "code": 38},
+                    {"name": "Kalamazoo"     , "code": 39},
+                    {"name": "Kalkaska"      , "code": 40},
+                    {"name": "Kent"          , "code": 41},
+                    {"name": "Keweenaw"      , "code": 42},
+                    {"name": "Lake"          , "code": 43},
+                    {"name": "Lapeer"        , "code": 44},
+                    {"name": "Leelanau"      , "code": 45},
+                    {"name": "Lenawee"       , "code": 46},
+                    {"name": "Livingston"    , "code": 47},
+                    {"name": "Luce"          , "code": 48},
+                    {"name": "Mackinac"      , "code": 49},
+                    {"name": "Macomb"        , "code": 50},
+                    {"name": "Manistee"      , "code": 51},
+                    {"name": "Marquette"     , "code": 52},
+                    {"name": "Mason"         , "code": 53},
+                    {"name": "Mecosta"       , "code": 54},
+                    {"name": "Menominee"     , "code": 55},
+                    {"name": "Midland"       , "code": 56},
+                    {"name": "Missaukee"     , "code": 57},
+                    {"name": "Monroe"        , "code": 58},
+                    {"name": "Montcalm"      , "code": 59},
+                    {"name": "Montmorency"   , "code": 60},
+                    {"name": "Muskegon"      , "code": 61},
+                    {"name": "Newaygo"       , "code": 62},
+                    {"name": "Oakland"       , "code": 63},
+                    {"name": "Oceana"        , "code": 64},
+                    {"name": "Ogemaw"        , "code": 65},
+                    {"name": "Ontonagon"     , "code": 66},
+                    {"name": "Osceola"       , "code": 67},
+                    {"name": "Oscoda"        , "code": 68},
+                    {"name": "Otsego"        , "code": 69},
+                    {"name": "Ottawa"        , "code": 70},
+                    {"name": "Presque Isle"  , "code": 71},
+                    {"name": "Roscommon"     , "code": 72},
+                    {"name": "Saginaw"       , "code": 73},
+                    {"name": "Saint Clair"   , "code": 74},
+                    {"name": "Saint Joseph"  , "code": 75},
+                    {"name": "Sanilac"       , "code": 76},
+                    {"name": "Schoolcraft"   , "code": 77},
+                    {"name": "Shiawassee"    , "code": 78},
+                    {"name": "Tuscola"       , "code": 79},
+                    {"name": "Van Buren"     , "code": 80},
+                    {"name": "Washtenaw"     , "code": 81},
+                    {"name": "Wayne"         , "code": 82},
+                    {"name": "Wexford"       , "code": 83}
+                ]
+            },
+            "defaultValue": null
+        },
+        {
+            "name": "Name",
+            "type": "esriFieldTypeString",
+            "alias": "Name",
+            "sqlType": "sqlTypeOther",
+            "length": 254,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "MainPhone",
+            "type": "esriFieldTypeString",
+            "alias": "MainPhone",
+            "sqlType": "sqlTypeOther",
+            "length": 30,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "Addr1",
+            "type": "esriFieldTypeString",
+            "alias": "Addr1",
+            "sqlType": "sqlTypeOther",
+            "length": 254,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "City",
+            "type": "esriFieldTypeString",
+            "alias": "City",
+            "sqlType": "sqlTypeOther",
+            "length": 30,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name": "Zip",
+            "type": "esriFieldTypeString",
+            "alias": "Zip",
+            "sqlType": "sqlTypeOther",
+            "length": 12,
+            "domain": null,
+            "defaultValue": null
+        },
+        {
+            "name"        : "Latitude"           ,
+            "type"        : "esriFieldTypeDouble",
+            "alias"       : "Latitude"           ,
+            "sqlType"     : "sqlTypeOther"       ,
+            "domain"      : null                 ,
+            "defaultValue": null
+        },
+        {
+            "name"        : "Longitude"          ,
+            "type"        : "esriFieldTypeDouble",
+            "alias"       : "Longitude"          ,
+            "sqlType"     : "sqlTypeOther"       ,
+            "domain"      : null                 ,
+            "defaultValue": null
+        }
+    ],
+    "features": [
+        {
+            "attributes": {
+                "County": 57,
+                "Name": "Hopkins Creek State Forest Campground",
+                "MainPhone": "231-775-7911",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.48207947,
+                "Longitude": -85.32120889
+            }
+        },
+        {
+            "attributes": {
+                "County": 56,
+                "Name": "Black Creek State Forest Campground",
+                "MainPhone": "989-386-4067",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 43.71047222,
+                "Longitude": -84.39715572
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Manistee River Bridge State Forest Campground",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.69468216,
+                "Longitude": -84.84749532
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Lake Margrethe State Forest Campground",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.65634795,
+                "Longitude": -84.81596293
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "AuSable River State Forest Campground and Canoe Camp",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.66561609,
+                "Longitude": -84.65471987
+            }
+        },
+        {
+            "attributes": {
+                "County": 83,
+                "Name": "Old US- 131 State Forest Campground",
+                "MainPhone": "231-775-7911",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.49189782,
+                "Longitude": -85.41703905
+            }
+        },
+        {
+            "attributes": {
+                "County": 28,
+                "Name": "Spring Lake State Forest Campground",
+                "MainPhone": "231-775-7911",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.56325568,
+                "Longitude": -85.36282989
+            }
+        },
+        {
+            "attributes": {
+                "County": 5,
+                "Name": "Graves Crossing State Forest Campground",
+                "MainPhone": "231-582-7523",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.03464609,
+                "Longitude": -85.06514095
+            }
+        },
+        {
+            "attributes": {
+                "County": 5,
+                "Name": "Pinney Bridge State Forest Campground",
+                "MainPhone": "231-582-7523",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.01665604,
+                "Longitude": -85.02895416
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Burton's Landing State Forest Campground",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.66251902,
+                "Longitude": -84.64720198
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Keystone Landing State Forest Campground",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.66506196,
+                "Longitude": -84.625277
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "White Pine Canoe Camp",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.65661276,
+                "Longitude": -84.47541692
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Jones Lake State Forest Campground",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.78375373,
+                "Longitude": -84.58826403
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Shupac Lake State Forest Campground",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.82185606,
+                "Longitude": -84.47893467
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Walsh Road Equestrian State Forest Campground and Trail Camp",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.78180298,
+                "Longitude": -84.37352106
+            }
+        },
+        {
+            "attributes": {
+                "County": 16,
+                "Name": "Weber Lake State Forest Campground",
+                "MainPhone": "231-238-9392",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.29852586,
+                "Longitude": -84.7207217
+            }
+        },
+        {
+            "attributes": {
+                "County": 16,
+                "Name": "Maple Bay State Forest Campground",
+                "MainPhone": "231-238-9392",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.48764496,
+                "Longitude": -84.70795213
+            }
+        },
+        {
+            "attributes": {
+                "County": 16,
+                "Name": "Haakwood State Forest Campground",
+                "MainPhone": "231-238-9392",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.30062072,
+                "Longitude": -84.6134743
+            }
+        },
+        {
+            "attributes": {
+                "County": 40,
+                "Name": "CCC Bridge State Forest Campground",
+                "MainPhone": "231-922-5270",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.6128336,
+                "Longitude": -84.99237609
+            }
+        },
+        {
+            "attributes": {
+                "County": 28,
+                "Name": "Forks State Forest Campground",
+                "MainPhone": "231-922-5270",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.67341586,
+                "Longitude": -85.40212351
+            }
+        },
+        {
+            "attributes": {
+                "County": 28,
+                "Name": "Scheck's Place State Forest Campground",
+                "MainPhone": "231-922-5270",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.65265356,
+                "Longitude": -85.45666914
+            }
+        },
+        {
+            "attributes": {
+                "County": 28,
+                "Name": "Lake Dubonnet Trail Camp",
+                "MainPhone": "231-276-9511",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.68721456,
+                "Longitude": -85.80200757
+            }
+        },
+        {
+            "attributes": {
+                "County": 52,
+                "Name": "Little Presque Isle Cabins",
+                "MainPhone": "906-339-4461",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.626986,
+                "Longitude": -87.492518
+            }
+        },
+        {
+            "attributes": {
+                "County": 10,
+                "Name": "Grass Lake State Forest Campground",
+                "MainPhone": "231-631-9227",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.59234849,
+                "Longitude": -85.84766733
+            }
+        },
+        {
+            "attributes": {
+                "County": 10,
+                "Name": "Garey Lake Trail Camp",
+                "MainPhone": "231-276-9511",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.77608874,
+                "Longitude": -85.94468466
+            }
+        },
+        {
+            "attributes": {
+                "County": 69,
+                "Name": "Big Bear Lake State Forest Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.94450168,
+                "Longitude": -84.38020126
+            }
+        },
+        {
+            "attributes": {
+                "County": 69,
+                "Name": "Big Bear Pointe State Forest Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.94202895,
+                "Longitude": -84.38801835
+            }
+        },
+        {
+            "attributes": {
+                "County": 16,
+                "Name": "Pine Grove State Forest Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.24457467,
+                "Longitude": -84.44604151
+            }
+        },
+        {
+            "attributes": {
+                "County": 69,
+                "Name": "Pickerel Lake (Otsego) State Forest Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.17785857,
+                "Longitude": -84.51772695
+            }
+        },
+        {
+            "attributes": {
+                "County": 10,
+                "Name": "Lake Ann State Forest Campground",
+                "MainPhone": "231-276-9511",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.71227994,
+                "Longitude": -85.86189381
+            }
+        },
+        {
+            "attributes": {
+                "County": 40,
+                "Name": "Guernsey Lake State Forest Campground",
+                "MainPhone": "231-922-5270",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.71587354,
+                "Longitude": -85.323627
+            }
+        },
+        {
+            "attributes": {
+                "County": 28,
+                "Name": "Scheck's Place Trail Camp",
+                "MainPhone": "231-922-5270",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.65242491,
+                "Longitude": -85.44650897
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Canoe Harbor State Forest Campground and Canoe Camp",
+                "MainPhone": "989-821-6125",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.60651606,
+                "Longitude": -84.46593761
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Upper Manistee River State Forest Campground and Canoe Camp",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.75026453,
+                "Longitude": -84.83936115
+            }
+        },
+        {
+            "attributes": {
+                "County": 40,
+                "Name": "Pickerel Lake (Kalkaska) State Forest Campground",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.79611691,
+                "Longitude": -84.97346977
+            }
+        },
+        {
+            "attributes": {
+                "County": 72,
+                "Name": "Houghton Lake State Forest Campground",
+                "MainPhone": "989-821-6125",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.40053614,
+                "Longitude": -84.7747881
+            }
+        },
+        {
+            "attributes": {
+                "County": 57,
+                "Name": "Reedsburg Dam State Forest Campground",
+                "MainPhone": "989-821-6125",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.35963325,
+                "Longitude": -84.85656759
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "4 Mile Trail Camp",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.59788668,
+                "Longitude": -84.62195276
+            }
+        },
+        {
+            "attributes": {
+                "County": 68,
+                "Name": "Mio Pond State Forest Campground and Group Camp",
+                "MainPhone": "989-473-2258",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.66334255,
+                "Longitude": -84.14580338
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Rainbow Bend State Forest Campground and Canoe Camp",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.67050531,
+                "Longitude": -84.41857745
+            }
+        },
+        {
+            "attributes": {
+                "County": 28,
+                "Name": "Lake Dubonnet State Forest Campground",
+                "MainPhone": "231-276-9511",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.68334397,
+                "Longitude": -85.80137581
+            }
+        },
+        {
+            "attributes": {
+                "County": 83,
+                "Name": "Long Lake (Wexford) State Forest Campground",
+                "MainPhone": "231-775-7911",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.33302357,
+                "Longitude": -85.3754688
+            }
+        },
+        {
+            "attributes": {
+                "County": 77,
+                "Name": "Merwin Creek State Forest Campground",
+                "MainPhone": "906-341-3618",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.0342794,
+                "Longitude": -86.12112453
+            }
+        },
+        {
+            "attributes": {
+                "County": 21,
+                "Name": "Portage Bay State Forest Campground",
+                "MainPhone": "906-644-2603",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.72669766,
+                "Longitude": -86.53512545
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Blind Sucker No.1 State Forest Campground",
+                "MainPhone": "906-658-3338",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.66928438,
+                "Longitude": -85.76180527
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Blind Sucker No. 2 State Forest Campground",
+                "MainPhone": "906-658-3338",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.667987,
+                "Longitude": -85.75501248
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Holland Lake State Forest Campground",
+                "MainPhone": "906-658-3338",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.61529195,
+                "Longitude": -85.65806914
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Pretty Lake State Forest Campground",
+                "MainPhone": "906-658-3338",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.60333494,
+                "Longitude": -85.65738983
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Headquarters Lake State Forest Campground",
+                "MainPhone": "906-293-3293",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.62468957,
+                "Longitude": -85.60362217
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "High Bridge State Forest Campground",
+                "MainPhone": "906-658-3338",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.60760705,
+                "Longitude": -85.60126151
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Reed & Green Bridge State Forest Campground",
+                "MainPhone": "906-492-3415",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.66144813,
+                "Longitude": -85.52235882
+            }
+        },
+        {
+            "attributes": {
+                "County": 43,
+                "Name": "Silver Creek State Forest Campground",
+                "MainPhone": "231-745-9465",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.11741288,
+                "Longitude": -85.68451013
+            }
+        },
+        {
+            "attributes": {
+                "County": 43,
+                "Name": "Carrieville State Forest Campground",
+                "MainPhone": "231-745-9465",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.03639774,
+                "Longitude": -85.72466311
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Mouth of Two Hearted River State Forest Campground",
+                "MainPhone": "906-492-3415",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.69792807,
+                "Longitude": -85.42224986
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Culhane Lake State Forest Campground",
+                "MainPhone": "906-492-3415",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.6948415,
+                "Longitude": -85.35977734
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Pike Lake State Forest Campground-Luce",
+                "MainPhone": "906-492-3415",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.6442528,
+                "Longitude": -85.41668413
+            }
+        },
+        {
+            "attributes": {
+                "County": 17,
+                "Name": "Andrus Lake State Forest Campground",
+                "MainPhone": "906-492-3415",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.70363209,
+                "Longitude": -85.03757708
+            }
+        },
+        {
+            "attributes": {
+                "County": 43,
+                "Name": "Leverentz Lake State Forest Campground",
+                "MainPhone": "231-745-9465",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 43.9081599,
+                "Longitude": -85.82009787
+            }
+        },
+        {
+            "attributes": {
+                "County": 67,
+                "Name": "Sunrise Lake State Forest Campground",
+                "MainPhone": "989-386-4067",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.02846353,
+                "Longitude": -85.33336025
+            }
+        },
+        {
+            "attributes": {
+                "County": 18,
+                "Name": "Mud Lake State Forest Campground",
+                "MainPhone": "989-386-4067",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 43.907203,
+                "Longitude": -85.078746
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Bass Lake State Forest Campground (Luce)",
+                "MainPhone": "906-293-5131",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.461844,
+                "Longitude": -85.70898235
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Natalie State Forest Campground",
+                "MainPhone": "906-293-5131",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.3510092,
+                "Longitude": -85.5789786
+            }
+        },
+        {
+            "attributes": {
+                "County": 49,
+                "Name": "South Manistique Lake State Forest Campground",
+                "MainPhone": "906-293-5131",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.17578292,
+                "Longitude": -85.79138975
+            }
+        },
+        {
+            "attributes": {
+                "County": 49,
+                "Name": "Milakokia Lake State Forest Campground",
+                "MainPhone": "906-293-5131",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.08421401,
+                "Longitude": -85.79274732
+            }
+        },
+        {
+            "attributes": {
+                "County": 49,
+                "Name": "Big Knob State Forest Campground",
+                "MainPhone": "906-293-5131",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.03940123,
+                "Longitude": -85.59372823
+            }
+        },
+        {
+            "attributes": {
+                "County": 49,
+                "Name": "Black River State Forest Campground",
+                "MainPhone": "906-643-8620",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.11664273,
+                "Longitude": -85.36406991
+            }
+        },
+        {
+            "attributes": {
+                "County": 49,
+                "Name": "Garnet Lake State Forest Campground",
+                "MainPhone": "906-595-7202",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.15415965,
+                "Longitude": -85.29498114
+            }
+        },
+        {
+            "attributes": {
+                "County": 49,
+                "Name": "Hog Island Point State Forest Campground",
+                "MainPhone": "906-643-8620",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.08102023,
+                "Longitude": -85.30703269
+            }
+        },
+        {
+            "attributes": {
+                "County": 17,
+                "Name": "Munuscong River State Forest Campground",
+                "MainPhone": "906-248-3422",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.21302923,
+                "Longitude": -84.28119877
+            }
+        },
+        {
+            "attributes": {
+                "County": 17,
+                "Name": "DeTour State Forest Campground",
+                "MainPhone": "906-643-8620",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.95834311,
+                "Longitude": -84.0006123
+            }
+        },
+        {
+            "attributes": {
+                "County": 57,
+                "Name": "Hopkins Creek Equestrian State Forest Campground and Trail Camp",
+                "MainPhone": "231-775-7911",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.48297497,
+                "Longitude": -85.31430338
+            }
+        },
+        {
+            "attributes": {
+                "County": 57,
+                "Name": "Goose Lake State Forest Campground",
+                "MainPhone": "231-775-7911",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.35691237,
+                "Longitude": -85.24319361
+            }
+        },
+        {
+            "attributes": {
+                "County": 57,
+                "Name": "Long Lake (Missaukee) State Forest Campground",
+                "MainPhone": "231-775-7911",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.35536894,
+                "Longitude": -85.25321701
+            }
+        },
+        {
+            "attributes": {
+                "County": 69,
+                "Name": "Johnson's Crossing Trail Camp",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.04466809,
+                "Longitude": -84.40769689
+            }
+        },
+        {
+            "attributes": {
+                "County": 69,
+                "Name": "Elk Hill Equestrian River Trail Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.18543861,
+                "Longitude": -84.42811963
+            }
+        },
+        {
+            "attributes": {
+                "County": 52,
+                "Name": "Bass Lake State Forest Campground (Marquette)",
+                "MainPhone": "906-339-4461",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.26338232,
+                "Longitude": -87.58646475
+            }
+        },
+        {
+            "attributes": {
+                "County": 16,
+                "Name": "Black Lake State Forest Campground",
+                "MainPhone": "231-627-2811",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.490802,
+                "Longitude": -84.266385
+            }
+        },
+        {
+            "attributes": {
+                "County": 71,
+                "Name": "Ocqueoc Falls State Forest Campground",
+                "MainPhone": "989-734-2543",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.39418647,
+                "Longitude": -84.05588897
+            }
+        },
+        {
+            "attributes": {
+                "County": 71,
+                "Name": "Shoepac Lake State Forest Campground",
+                "MainPhone": "231-625-2522",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.23932922,
+                "Longitude": -84.17146619
+            }
+        },
+        {
+            "attributes": {
+                "County": 60,
+                "Name": "Jackson Lake State Forest Campground",
+                "MainPhone": "989-785-4388",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.08876648,
+                "Longitude": -84.16052943
+            }
+        },
+        {
+            "attributes": {
+                "County": 60,
+                "Name": "Ess Lake State Forest Campground",
+                "MainPhone": "989-785-4388",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.10953395,
+                "Longitude": -83.98162652
+            }
+        },
+        {
+            "attributes": {
+                "County": 60,
+                "Name": "Avery Lake State Forest Campground",
+                "MainPhone": "989-785-4388",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.93170349,
+                "Longitude": -84.18706247
+            }
+        },
+        {
+            "attributes": {
+                "County": 4,
+                "Name": "Ossineke State Forest Campground",
+                "MainPhone": "989-724-5126",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.92064843,
+                "Longitude": -83.4127462
+            }
+        },
+        {
+            "attributes": {
+                "County": 4,
+                "Name": "Thunder Bay River State Forest Campground",
+                "MainPhone": "989-785-4251",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.01910108,
+                "Longitude": -83.55834305
+            }
+        },
+        {
+            "attributes": {
+                "County": 69,
+                "Name": "Pigeon River State Forest Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.17647521,
+                "Longitude": -84.4290858
+            }
+        },
+        {
+            "attributes": {
+                "County": 31,
+                "Name": "Emily Lake State Forest Campground",
+                "MainPhone": "906-288-3321",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.85682629,
+                "Longitude": -88.85608267
+            }
+        },
+        {
+            "attributes": {
+                "County": 7,
+                "Name": "Big Eric's Bridge State Forest Campground",
+                "MainPhone": "906-353-6558",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.86508483,
+                "Longitude": -88.08476906
+            }
+        },
+        {
+            "attributes": {
+                "County": 7,
+                "Name": "Big Lake State Forest Campground",
+                "MainPhone": "906-353-6558",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.61165462,
+                "Longitude": -88.57252205
+            }
+        },
+        {
+            "attributes": {
+                "County": 7,
+                "Name": "Beaufort Lake State Forest Campground",
+                "MainPhone": "906-339-4461",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.54775502,
+                "Longitude": -88.18893728
+            }
+        },
+        {
+            "attributes": {
+                "County": 7,
+                "Name": "King Lake State Forest Campground",
+                "MainPhone": "906-353-6558",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.53100744,
+                "Longitude": -88.40212165
+            }
+        },
+        {
+            "attributes": {
+                "County": 36,
+                "Name": "Deer Lake State Forest Campground",
+                "MainPhone": "906-353-6558",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.32532709,
+                "Longitude": -88.32434854
+            }
+        },
+        {
+            "attributes": {
+                "County": 36,
+                "Name": "Glidden Lake State Forest Campground",
+                "MainPhone": "906-875-3324",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.07152629,
+                "Longitude": -88.23794097
+            }
+        },
+        {
+            "attributes": {
+                "County": 22,
+                "Name": "Gene's Pond State Forest Campground",
+                "MainPhone": "906-875-3324",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.07264304,
+                "Longitude": -87.86584083
+            }
+        },
+        {
+            "attributes": {
+                "County": 22,
+                "Name": "Carney Lake State Forest Campground",
+                "MainPhone": "906-875-3324",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.8923056,
+                "Longitude": -87.94124585
+            }
+        },
+        {
+            "attributes": {
+                "County": 52,
+                "Name": "Ski-kwe zaag'igan State Forest Campground",
+                "MainPhone": "906-875-3324",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.29120667,
+                "Longitude": -88.06075854
+            }
+        },
+        {
+            "attributes": {
+                "County": 52,
+                "Name": "Anderson Lake West State Forest Campground",
+                "MainPhone": "906-339-4461",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.22313208,
+                "Longitude": -87.49454909
+            }
+        },
+        {
+            "attributes": {
+                "County": 52,
+                "Name": "Little Lake State Forest Campground",
+                "MainPhone": "906-339-4461",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.281858,
+                "Longitude": -87.33388903
+            }
+        },
+        {
+            "attributes": {
+                "County": 2,
+                "Name": "Forest Lake State Forest Campground",
+                "MainPhone": "906-341-2355",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.30720581,
+                "Longitude": -86.86868386
+            }
+        },
+        {
+            "attributes": {
+                "County": 55,
+                "Name": "Cedar River North State Forest Campground",
+                "MainPhone": "906-863-9747",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.50240742,
+                "Longitude": -87.39781897
+            }
+        },
+        {
+            "attributes": {
+                "County": 2,
+                "Name": "Kingston Lake State Forest Campground",
+                "MainPhone": "906-341-2355",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.58466885,
+                "Longitude": -86.22650966
+            }
+        },
+        {
+            "attributes": {
+                "County": 77,
+                "Name": "North Gemini Lake State Forest Campground",
+                "MainPhone": "906-341-2355",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.49030721,
+                "Longitude": -86.30609418
+            }
+        },
+        {
+            "attributes": {
+                "County": 77,
+                "Name": "South Gemini Lake State Forest Campground",
+                "MainPhone": "906-341-2355",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.48142894,
+                "Longitude": -86.30425054
+            }
+        },
+        {
+            "attributes": {
+                "County": 77,
+                "Name": "Canoe Lake State Forest Campground",
+                "MainPhone": "906-341-2355",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.45839646,
+                "Longitude": -86.29134545
+            }
+        },
+        {
+            "attributes": {
+                "County": 77,
+                "Name": "East Branch of Fox River State Forest Campground",
+                "MainPhone": "906-341-2355",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.46558312,
+                "Longitude": -85.94419927
+            }
+        },
+        {
+            "attributes": {
+                "County": 10,
+                "Name": "Garey Lake State Forest Campground",
+                "MainPhone": "231-276-9511",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.777938,
+                "Longitude": -85.93906184
+            }
+        },
+        {
+            "attributes": {
+                "County": 16,
+                "Name": "Twin Lakes State Forest Campground",
+                "MainPhone": "231-627-2811",
+                "Addr1": null,
+                "City": null,
+                "Zip": null,
+                "Latitude": 45.53699097,
+                "Longitude": -84.28987607
+            }
+        },
+        {
+            "attributes": {
+                "County": 60,
+                "Name": "Big Oaks State Forest Campground",
+                "MainPhone": "989-785-4388",
+                "Addr1": "Avery Lake Road",
+                "City": "Atlanta",
+                "Zip": "49709",
+                "Latitude": 44.92658763,
+                "Longitude": -84.19176546
+            }
+        },
+        {
+            "attributes": {
+                "County": 69,
+                "Name": "Lake Marjory State Forest Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": "1.25 miles South of Waters via Old 27 & Cottonwood Rd.",
+                "City": null,
+                "Zip": null,
+                "Latitude": 44.864571,
+                "Longitude": -84.6957141
+            }
+        },
+        {
+            "attributes": {
+                "County": 68,
+                "Name": "Muskrat Lake State Forest Campground",
+                "MainPhone": "989-473-2258",
+                "Addr1": null,
+                "City": null,
+                "Zip": null,
+                "Latitude": 44.75241347,
+                "Longitude": -84.2408207
+            }
+        },
+        {
+            "attributes": {
+                "County": 16,
+                "Name": "Black Lake State Forest Campground-Lower",
+                "MainPhone": "231-627-2811",
+                "Addr1": "2674 Eisens Trail",
+                "City": "Cheboygan",
+                "Zip": "49721",
+                "Latitude": 45.48927365,
+                "Longitude": -84.2664594
+            }
+        },
+        {
+            "attributes": {
+                "County": 69,
+                "Name": "Elk Hill Group Equestrian Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": null,
+                "City": null,
+                "Zip": null,
+                "Latitude": 45.18264831,
+                "Longitude": -84.4190506
+            }
+        },
+        {
+            "attributes": {
+                "County": 16,
+                "Name": "Black Lake Trail Camp",
+                "MainPhone": "231-627-2811",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.52714424,
+                "Longitude": -84.27969043
+            }
+        },
+        {
+            "attributes": {
+                "County": 40,
+                "Name": "Rapid River Trail Camp",
+                "MainPhone": "231-922-5270",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.75349112,
+                "Longitude": -85.19432376
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Goose Creek State Forest Campground",
+                "MainPhone": "989-348-6371",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.75928027,
+                "Longitude": -84.84004903
+            }
+        },
+        {
+            "attributes": {
+                "County": 10,
+                "Name": "Platte River State Forest Campground",
+                "MainPhone": "231-276-9511",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.64546752,
+                "Longitude": -85.97833182
+            }
+        },
+        {
+            "attributes": {
+                "County": 35,
+                "Name": "Van Etten Lake State Forest Campground",
+                "MainPhone": "989-362-5041",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.47069733,
+                "Longitude": -83.37185895
+            }
+        },
+        {
+            "attributes": {
+                "County": 65,
+                "Name": "Ambrose Lake State Forest Campground",
+                "MainPhone": "989-473-2258",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.40719226,
+                "Longitude": -84.25516244
+            }
+        },
+        {
+            "attributes": {
+                "County": 26,
+                "Name": "House Lake State Forest Campground",
+                "MainPhone": "989-386-4067",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.13934466,
+                "Longitude": -84.57257431
+            }
+        },
+        {
+            "attributes": {
+                "County": 26,
+                "Name": "Trout Lake State Forest Campground",
+                "MainPhone": "989-386-4067",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.13538638,
+                "Longitude": -84.56943857
+            }
+        },
+        {
+            "attributes": {
+                "County": 20,
+                "Name": "Goose Creek Trail Camp",
+                "MainPhone": "989-348-7068",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.76338982,
+                "Longitude": -84.83814814
+            }
+        },
+        {
+            "attributes": {
+                "County": 68,
+                "Name": "Parmalee Bridge State Forest Campground and Canoe Camp",
+                "MainPhone": "989-473-2258",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.67743189,
+                "Longitude": -84.29267359
+            }
+        },
+        {
+            "attributes": {
+                "County": 68,
+                "Name": "McCollum Lake State Forest Campground",
+                "MainPhone": "989-848-5045",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.7709176,
+                "Longitude": -83.90071072
+            }
+        },
+        {
+            "attributes": {
+                "County": 28,
+                "Name": "Arbutus Lake State Forest Campground",
+                "MainPhone": "231-922-5270",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.67851701,
+                "Longitude": -85.52265742
+            }
+        },
+        {
+            "attributes": {
+                "County": 10,
+                "Name": "Veterans Memorial State Forest Campground",
+                "MainPhone": "231-276-9511",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.6584226,
+                "Longitude": -85.94572737
+            }
+        },
+        {
+            "attributes": {
+                "County": 51,
+                "Name": "Healy Lake State Forest Campground",
+                "MainPhone": "231-864-2531",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.43793079,
+                "Longitude": -85.99471498
+            }
+        },
+        {
+            "attributes": {
+                "County": 83,
+                "Name": "Baxter Bridge State Forest Campground",
+                "MainPhone": "231-775-7911",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.49346679,
+                "Longitude": -85.52292793
+            }
+        },
+        {
+            "attributes": {
+                "County": 77,
+                "Name": "Mead Creek State Forest Campground",
+                "MainPhone": "906-341-2355",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.18144071,
+                "Longitude": -85.98651654
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Lake Superior State Forest Campground",
+                "MainPhone": "906-658-3338",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.67692692,
+                "Longitude": -85.75606337
+            }
+        },
+        {
+            "attributes": {
+                "County": 43,
+                "Name": "Lincoln Bridge State Forest Campground",
+                "MainPhone": "231-745-9465",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.13279779,
+                "Longitude": -85.69121044
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Perch Lake State Forest Campground",
+                "MainPhone": "906-658-3338",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.63038216,
+                "Longitude": -85.60324932
+            }
+        },
+        {
+            "attributes": {
+                "County": 43,
+                "Name": "Bray Creek State Forest Campground",
+                "MainPhone": "231-745-9465",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 43.91510977,
+                "Longitude": -85.8246342
+            }
+        },
+        {
+            "attributes": {
+                "County": 48,
+                "Name": "Bodi Lake State Forest Campground",
+                "MainPhone": "906-492-3415",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.70530443,
+                "Longitude": -85.33734178
+            }
+        },
+        {
+            "attributes": {
+                "County": 49,
+                "Name": "Little Brevort Lake-North State Forest Campground",
+                "MainPhone": "906-643-8620",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.0199285,
+                "Longitude": -85.01780425
+            }
+        },
+        {
+            "attributes": {
+                "County": 16,
+                "Name": "Stoney Creek Trail Camp",
+                "MainPhone": "231-625-2522",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.40649945,
+                "Longitude": -84.44000406
+            }
+        },
+        {
+            "attributes": {
+                "County": 69,
+                "Name": "Round Lake State Forest Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.1344307,
+                "Longitude": -84.45335701
+            }
+        },
+        {
+            "attributes": {
+                "County": 60,
+                "Name": "Town Corner Lake State Forest Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.11406403,
+                "Longitude": -84.36144866
+            }
+        },
+        {
+            "attributes": {
+                "County": 71,
+                "Name": "Tomahawk Creek Flooding State Forest Campground",
+                "MainPhone": "231-625-2522",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.21893602,
+                "Longitude": -84.17696673
+            }
+        },
+        {
+            "attributes": {
+                "County": 71,
+                "Name": "Tomahawk Lake State Forest Campground",
+                "MainPhone": "231-625-2522",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.23195409,
+                "Longitude": -84.16549637
+            }
+        },
+        {
+            "attributes": {
+                "County": 60,
+                "Name": "Little Wolf Lake State Forest Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 44.85538184,
+                "Longitude": -84.28634226
+            }
+        },
+        {
+            "attributes": {
+                "County": 77,
+                "Name": "Ross Lake State Forest Campground",
+                "MainPhone": "906-341-2355",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.48492663,
+                "Longitude": -86.26605089
+            }
+        },
+        {
+            "attributes": {
+                "County": 77,
+                "Name": "Cusino Lake State Forest Campground",
+                "MainPhone": "906-341-2355",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.45942272,
+                "Longitude": -86.26069475
+            }
+        },
+        {
+            "attributes": {
+                "County": 77,
+                "Name": "Fox River State Forest Campground",
+                "MainPhone": "906-341-2355",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 46.39921394,
+                "Longitude": -86.02839462
+            }
+        },
+        {
+            "attributes": {
+                "County": 69,
+                "Name": "Pigeon Bridge State Forest Campground",
+                "MainPhone": "989-732-5485",
+                "Addr1": " ",
+                "City": " ",
+                "Zip": " ",
+                "Latitude": 45.15650828,
+                "Longitude": -84.46517269
+            }
+        }
+    ]
+}
