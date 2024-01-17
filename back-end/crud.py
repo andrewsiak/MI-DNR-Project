@@ -2,7 +2,7 @@
 
 """CRUD operations."""
 
-from model import db, User, Map_Data, Review, Wishlist, Map_Data, connect_to_db
+from model import db, User, Campground, Map_Data, Review, Wishlist, Map_Data, connect_to_db
 
 
 def create_user(email, password):
@@ -31,6 +31,34 @@ def get_user_by_email(email):
     return User.query.filter(User.email == email).first()
 
 
+def create_campground(county, name, main_phone, addr, city, zip, latitude, longitude):
+    """Create and return a new campground."""
+
+    campground_info = Campground(
+        county=county,
+        name=name,
+        main_phone=main_phone,
+        addr=addr,
+        city=city,
+        zip=zip,
+        latitude=latitude,
+        longitude=longitude 
+    )
+
+    return campground_info
+
+
+def get_campgrounds():
+    """Return all campgrounds."""
+
+    return Campground.query.all()
+
+
+def get_campgrorunds_by_id(campground_id):
+
+    return Campground.query.get(campground_id)
+
+
 
 def create_map(object_id, acres, district, facility, shape_area, shape_length, lat, lng):
     """Create and return a new map."""
@@ -50,16 +78,14 @@ def create_map(object_id, acres, district, facility, shape_area, shape_length, l
 
 
 def get_map():
-    """Return all park."""
+    """Return all map_data."""
 
     return Map_Data.query.all()
-
 
 
 def get_map_by_id(map_data_id):
 
     return Map_Data.query.get(map_data_id)
-
 
 
 def create_review(score):

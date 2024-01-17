@@ -1,5 +1,6 @@
 """Models for MI DNR Project app."""
 from flask_sqlalchemy import SQLAlchemy
+import json
 
 db = SQLAlchemy()
 
@@ -24,27 +25,33 @@ class User(db.Model):
         return f"<User user_id={self.user_id}>"
     
     
-class Park(db.Model):
-    """A Park"""
+class Campground(db.Model):
+    """A Campground"""
 
-    __tablename__ = "parks"
+    __tablename__ = "campgrounds"
 
-    park_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    # map_data_id = db.Column(db.Integer, db.ForeignKey("map_data.map_data_id"))
-    address = db.Column(db.String)
-    district = db.Column(db.String)
-    park_name = db.Column(db.String)
-    park_url = db.Column(db.String)
-    description = db.Column(db.Text)
+    campground_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
+    county = db.Column(db.String)
+    name = db.Column(db.String)
+    main_phone = db.Column(db.String)
+    addr = db.Column(db.String)
+    city = db.Column(db.String)
+    zip = db.Column(db.String)
+    latitude = db.Column(db.Float)
+    longitude = db.Column(db.Float) 
 
-
-    # review = db.relationship("Review", back_populates="park")
-    # wishlist = db.relationship("Wishlist", back_populates="park")
 
 
     def __repr__(self):
-        return f"<Park park_id={self.park_id}>"
+        return f"<Campground campground_id={self.campground_id}>"
 
+
+        # Need to return object as json serializable
+
+    def serialize(self):
+        return {"campground_id": self.campground_id,
+                "county": self.county,
+                "name": self.name}
 
 class Map_Data(db.Model):
     """A map"""
@@ -68,16 +75,16 @@ class Map_Data(db.Model):
 
     
 class Review(db.Model):
-    """A review for a park"""
+    """A review for a campground or park"""
 
     __tablename__ = "reviews"
 
     review_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
     # user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"))
-    # park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
+    # campground_id = db.Column(db.Integer, db.ForeignKey("campground.campground_id"))
     score = db.Column(db.Integer)
 
-    # park = db.relationship("Park", back_populates="review")
+    # campground = db.relationship("Campground", back_populates="review")
     # user = db.relationship("User", back_populates="review")
 
     def __repr__(self):
@@ -85,14 +92,14 @@ class Review(db.Model):
 
 
 class Wishlist(db.Model):
-    """user's park wishlist"""
+    """user's campground wishlist"""
     __tablename__ = "wishlists"
 
     wishlist_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
     # user_id = db.Column(db.Integer, db.ForeignKey("wishlist.wishlist_id"))
-    # park_id = db.Column(db.Integer, db.ForeignKey("park.park_id"))
+    # campground_id = db.Column(db.Integer, db.ForeignKey("campground.campground_id"))
 
-    # park = db.relationship("Park", back_populates="wishlist")
+    # campground = db.relationship("Campground", back_populates="wishlist")
     # user = db.relationship("User", back_populates="wishlist")
 
     def __repr__(self):

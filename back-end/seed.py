@@ -16,90 +16,74 @@ os.system("createdb dnrproject")
 
 model.db.create_all()
 
+with open("data/campground.json") as c:
+    campgrund_info = json.loads(c.read())
+
+    features = campgrund_info["features"]
 
 
-with open("/Users/Masedium/src/Project - MI DNR/data/arcgis.json") as f:
+
+campgrounds_in_db = []
+for campground_feature in features:
+    attributes = campground_feature["attributes"]
+    county, name, main_phone, addr, city, zip, latitude, longitude = (
+        attributes["County"],
+        attributes["Name"],
+        attributes["MainPhone"],
+        attributes["Addr1"],
+        attributes["City"],
+        attributes["Zip"],
+        attributes["Latitude"],
+        attributes["Longitude"],
+    )
+
+    db_campground = crud.create_campground(county, name, main_phone, addr, city, zip, latitude, longitude)
+    campgrounds_in_db.append(db_campground)
+    
+model.db.session.add_all(campgrounds_in_db)
+model.db.session.commit()   
+    
+
+
+with open("data/arcgis.json") as f:
     map_info = json.loads(f.read())
 
     features = map_info["features"]
-
-
+    
 maps_in_db = []
-for feature in features:
-    attributes = feature["attributes"]
-    object_id, acres, district, facility, shape_area, shape_length = (
+for map_feature in features:
+    attributes = map_feature["attributes"]
+    geometry = map_feature["geometry"]
+    object_id, acres, district, facility, shape_area, shape_length, lat, lng = (
         attributes["OBJECTID"],
         attributes["ACRES"],
         attributes["DISTRICT"],
         attributes["FACILITY"],
         attributes["Shape__Area"],
         attributes["Shape__Length"],
+        geometry["rings"][0][0][0],
+        geometry["rings"][0][0][1]
     )
 
+    # # create variable to find geometry dictionary
+    # geometry = map_feature["geometry"]
+    # rings = geometry["rings"]
+    # ring1 = rings[0]
+    # point1 = ring1[0]
+    # lat1 = point1[0]
+    # lng1 = point1[1]
 
-    # create variable to find geometry dictionary
-    geometry = feature["geometry"]
-    rings = geometry["rings"]
-    ring1 = rings[0]
-    point1 = ring1[0]
-    lat1 = point1[0]
-    lng1 = point1[1]
-
-    # geometry["rings"][ringIdx][pointIdx][0 = lat, 1 = lng]
-    lat = geometry["rings"][0][0][0]
-    lng = geometry["rings"][0][0][1]
+    # # geometry["rings"][ringIdx][pointIdx][0 = lat, 1 = lng]
+    # lat = geometry["rings"][0][0][0]
+    # lng = geometry["rings"][0][0][1]
 
 
-    db_map = crud.create_map(object_id, acres, district, facility, shape_area, shape_length)
-    
+    db_map = crud.create_map(object_id, acres, district, facility, shape_area, shape_length, lat, lng)
     maps_in_db.append(db_map)
+
 
 model.db.session.add_all(maps_in_db)
 model.db.session.commit()
-
-    # "features": [
-    #     {
-    #         "attributes": {
-    #             "OBJECTID": 3,
-    #             "ACRES": 311.141471,
-    #             "DISTRICT": "Plainwell",
-    #             "FACILITY": "Warren Woods State Park",
-    #             "Shape__Area": 1259149.8968277,
-    #             "Shape__Length": 4959.54938203082
-
-
-# Type
-
-# Division
-
-# County
-
-# Name
-
-# Label
-
-# RecSrchTyp
-
-# UnitID
-
-# MainPhone
-
-# Addr1
-
-# City
-
-# Zip
-
-# Latitude
-
-# Longitude
-
-# Edit_Name
-
-# Edit_Date
-
-# Link_Id
-
 
 
 # movies_in_db = []
