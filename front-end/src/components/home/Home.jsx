@@ -23,7 +23,7 @@ import Row from 'react-bootstrap/Row';
 //   }, []);
 
 const Campground = () => {
-  const [campground, setCampground] = useState(null);
+  const [a_campground, setCampground] = useState(null);
   useEffect(() => {
     fetch("api/campgrounds", {
       method: "GET",
@@ -39,11 +39,22 @@ const Campground = () => {
       })
       .catch((error) => console.log(error));
   }, []);
+
+  
   return (
     <Container>
     <div>
       <h2>Show Something!</h2>
-      {campground && <p>{campground}</p>}
+{/*         
+        version 1: */}
+        {/* {a_campground.map((campground) => (
+          <div className="campground" key={campground_id}>
+            <h3> {campground.text}</h3>
+          </div>
+        ))} */}
+
+        {/* version 2: */}
+      {/* {campground && <p>{campground}</p>} */}
     </div>
     </Container>
   );

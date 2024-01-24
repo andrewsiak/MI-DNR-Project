@@ -1,15 +1,15 @@
 import React from "react";
-import "./header.css";
 import Container from 'react-bootstrap/Container';
 
 
 
-const Header = () =>{
+
+const Users = () =>{
     return(
-        <div> Header
+        <div> Users
 
         </div>
     )
 }
 
-export default Header
+export default Users

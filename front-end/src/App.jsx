@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import Header from './components/header/Header'
 import Home from './components/home/Home'
-import About from './components/about/About'
 import Nav_bar from './components/nav_bar/Nav_bar'
+import LoginForm from './components/login_form/Login_form'
+import About from './components/about/About'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   // const [campgrounds, setCampgrounds] = React.useState({});
   // const [loading, setLoading] = React.useState(false);
 
@@ -26,11 +26,16 @@ function App() {
 
 
   return (
-    <div>
+    <div className = "App">
+
+
+
+
     <Nav_bar />
-    <Header />
+    {/* <Header />
     <Home />
-    <About />
+    <LoginForm />
+    <About />  */}
 
     </div>
   )
