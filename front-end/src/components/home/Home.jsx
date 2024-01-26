@@ -9,11 +9,15 @@ import Row from 'react-bootstrap/Row';
 
 
 const Home = () =>{
-    return(
-        <div> Home
+  return(
+    <Container>
+      <div>Welcome to Michigan!</div>
 
-        </div>
-    )
+      <Row>
+          <Image src="./images/lake-image.jpeg" fluid />
+      </Row>
+    </Container>
+  )
 }
 
 export default Home
@@ -76,13 +80,7 @@ export default Home
 // const Home = () =>{
 //     return (
 
-//       <Container>
-//         <div>Welcome to Michigan!</div>
 
-//         <Row>
-//             <Image src="./images/lake-image.jpeg" fluid />
-//         </Row>
-//       </Container>
 //     );
 //   }
 

@@ -8,7 +8,8 @@ import { BrowserRouter as Router, Routes, Route, Link,  } from 'react-router-dom
 import About from "../about/About";
 import Home from "../home/Home";
 import Users from "../users/Users";
-// import LoginForm from "../login/Login_form";
+import LoginForm from "../login_form/Login_form";
+import Campground from "../campgrounds/Campgrounds";
 
 
 
@@ -28,7 +29,9 @@ const Nav_bar = () =>{
 \                <Nav.Link as={Link} to={"/home"} >Home</Nav.Link>
 
                 <Nav.Link as={Link} to={"about"}>About</Nav.Link>
-                {/* <Nav.Link as={Link} to={"login"}>Login</Nav.Link> */}
+                <Nav.Link as={Link} to={"login"}>Login</Nav.Link>
+                <Nav.Link as={Link} to={"campgrounds"}>Campgrounds</Nav.Link>
+
 
                 <NavDropdown title="Menu" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#account">Your Account</NavDropdown.Item>
@@ -56,8 +59,10 @@ const Nav_bar = () =>{
           </Route>
           <Route path="/users" element={<Users/>}>
           </Route>
-          {/* <Route path="/login" element={<LoginForm/>}>
-          </Route> */}
+          <Route path="/campgrounds" element={<Campground/>}>
+          </Route>
+          <Route path="/login" element={<LoginForm/>}>
+          </Route>
         
         </Routes>
         </div>
