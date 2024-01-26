@@ -72,14 +72,3 @@ const Nav_bar = () =>{
 
 export default Nav_bar
 
-// <nav>
-// <button onClick={() => setActive("FirstCard")}>One</button>
-// <button onClick={() => setActive("SecondCard")}>Two</button>
-// <button onClick={() => setActive("ThirdCard")}>Three</button>
-// </nav>
-// <div>
-// {active === "FirstCard" && <Nav_bar title ="1" />}
-// {active === "SecondCard" && <Nav_bar title ="2" />}
-// {active === "ThirdCard" && <Nav_bar title ="3" />}
-
-// </div>

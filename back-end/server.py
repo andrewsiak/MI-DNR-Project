@@ -30,11 +30,11 @@ def test_page():
 @app.route('/api/campgrounds')
 def get_campground():
     campgrounds = get_campgrounds()
-    # campground_dicts = {}
-    # for campground in campgrounds:
-    #    campground_dicts.append(campground.serialize())
-    # return jsonify(campground.campground_id)
-    return jsonify({campground.campground_id: campground.serialize() for campground in campgrounds})
+    campground_list = []
+    for campground in campgrounds:
+       campground_list.append(campground.serialize())
+    return jsonify(campground_list)
+    # return jsonify([campground.serialize() for campground in campgrounds])
 
 
 # Will need to use the below - modify for this project api
