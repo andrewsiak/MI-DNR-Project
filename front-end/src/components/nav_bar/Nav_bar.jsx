@@ -8,11 +8,12 @@ import { BrowserRouter as Router, Routes, Route, Link,  } from 'react-router-dom
 import About from "../about/About";
 import Home from "../home/Home";
 import Users from "../users/Users";
+// import LoginForm from "../login/Login_form";
 
 
 
 const Nav_bar = () =>{
-  const [active, setActive] = useState("FirstCard");
+  // const [active, setActive] = useState("FirstCard");
 
     return(
       <Router>
@@ -24,10 +25,10 @@ const Nav_bar = () =>{
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                {/* <Nav.Link href="#home">Home</Nav.Link> */}
-                <Nav.Link as={Link} to={"/home"} >Home</Nav.Link>
+\                <Nav.Link as={Link} to={"/home"} >Home</Nav.Link>
 
-                {/* <Nav.Link as={Link} to={"/about"}>About</Nav.Link> */}
+                <Nav.Link as={Link} to={"about"}>About</Nav.Link>
+                {/* <Nav.Link as={Link} to={"login"}>Login</Nav.Link> */}
 
                 <NavDropdown title="Menu" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#account">Your Account</NavDropdown.Item>
@@ -36,43 +37,44 @@ const Nav_bar = () =>{
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#login">
-                    Login
+                  <NavDropdown.Item href="#action/3.4">
+                    Filler
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
-
         </div>
-       
+
+      
         <div>
         <Routes>
-          {/* <Route path="/about">
-            <About />
+          <Route path="about" element={<About/>}>
+          </Route>
+          <Route path="/home" element={<Home/>}>
+          </Route>
+          <Route path="/users" element={<Users/>}>
+          </Route>
+          {/* <Route path="/login" element={<LoginForm/>}>
           </Route> */}
-          {/* <Route path="/users">
-            <Users />
-          </Route> */}
-          {/* <Route path="/">
-            <Home />
-          </Route> */}
+        
         </Routes>
         </div>
-      </Router>
+        </Router> 
+
 )}
 
 export default Nav_bar
 
-{/* <nav>
-<button onClick={() => setActive("FirstCard")}>One</button>
-<button onClick={() => setActive("SecondCard")}>Two</button>
-<button onClick={() => setActive("ThirdCard")}>Three</button>
-</nav>
-<div>
-{active === "FirstCard" && <Nav_bar title ="1" />}
-{active === "SecondCard" && <Nav_bar title ="2" />}
-{active === "ThirdCard" && <Nav_bar title ="3" />}
+// <nav>
+// <button onClick={() => setActive("FirstCard")}>One</button>
+// <button onClick={() => setActive("SecondCard")}>Two</button>
+// <button onClick={() => setActive("ThirdCard")}>Three</button>
+// </nav>
+// <div>
+// {active === "FirstCard" && <Nav_bar title ="1" />}
+// {active === "SecondCard" && <Nav_bar title ="2" />}
+// {active === "ThirdCard" && <Nav_bar title ="3" />}
 
-</div> */}
+// </div>

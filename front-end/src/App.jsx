@@ -4,7 +4,6 @@ import './App.css'
 import Header from './components/header/Header'
 import Home from './components/home/Home'
 import Nav_bar from './components/nav_bar/Nav_bar'
-import LoginForm from './components/login_form/Login_form'
 import About from './components/about/About'
 
 
@@ -32,10 +31,7 @@ function App() {
 
 
     <Nav_bar />
-    {/* <Header />
-    <Home />
-    <LoginForm />
-    <About />  */}
+
 
     </div>
   )
