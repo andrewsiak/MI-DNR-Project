@@ -34,7 +34,7 @@ const Campground = () => {
     <Container>
       <div>
         <h2>Find a Campground</h2>
-        <ol className="list-group list-group-numbered">
+        <ol className="list-group">
             {(allCampgrounds ?? []).map((campgroundData) => {
 
                 return(
