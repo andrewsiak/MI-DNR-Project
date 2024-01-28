@@ -37,6 +37,8 @@ def get_campground():
     # return jsonify([campground.serialize() for campground in campgrounds])
 
 
+
+
 # Will need to use the below - modify for this project api
 # @app.route('/api/campgrounds')
 # def get_campgrounds():

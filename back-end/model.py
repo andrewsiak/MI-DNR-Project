@@ -10,10 +10,6 @@ class User(db.Model):
     __tablename__ = "users"
 
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    user_name = db.Column(db.String, unique=True)
-    fname = db.Column(db.String)
-    lname = db.Column(db.String)
-    phone = db.Column(db.String)
     email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
 
@@ -22,7 +18,7 @@ class User(db.Model):
 
 
     def __repr__(self):
-        return f"<User user_id={self.user_id}>"
+        return f"<User user_id={self.user_id} email={self.email}>"
     
     
 class Campground(db.Model):

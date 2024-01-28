@@ -33,6 +33,9 @@ function App() {
     <Nav_bar />
 
 
+
+
+
     </div>
   )
 }
