@@ -9,7 +9,7 @@ import About from "../about/About";
 import Home from "../home/Home";
 import Users from "../users/Users";
 import LoginForm from "../login_form/Login_form";
-import Campground from "../campgrounds/Campgrounds";
+import Campground from "../campgrounds_list/Campgrounds_list";
 
 
 
@@ -17,7 +17,6 @@ const Nav_bar = () =>{
   // const [active, setActive] = useState("FirstCard");
 
     return(
-      <Router>
         <div> 
 
         <Navbar bg="dark" expand="lg" variant={"dark"}>
@@ -33,7 +32,7 @@ const Nav_bar = () =>{
                 <Nav.Link as={Link} to={"campgrounds"}>Campgrounds</Nav.Link>
 
 
-                <NavDropdown title="Menu" id="basic-nav-dropdown">
+                {/* <NavDropdown title="Menu" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#account">Your Account</NavDropdown.Item>
                   <NavDropdown.Item href="#favorites">
                     Favorites
@@ -43,7 +42,7 @@ const Nav_bar = () =>{
                   <NavDropdown.Item href="#action/3.4">
                     Filler
                   </NavDropdown.Item>
-                </NavDropdown>
+                </NavDropdown> */}
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -51,22 +50,7 @@ const Nav_bar = () =>{
         </div>
 
       
-        <div>
-        <Routes>
-          <Route path="about" element={<About/>}>
-          </Route>
-          <Route path="/home" element={<Home/>}>
-          </Route>
-          <Route path="/users" element={<Users/>}>
-          </Route>
-          <Route path="/campgrounds" element={<Campground/>}>
-          </Route>
-          <Route path="/login" element={<LoginForm/>}>
-          </Route>
-        
-        </Routes>
-        </div>
-        </Router> 
+
 
 )}
 

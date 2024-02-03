@@ -1,13 +1,13 @@
 import React from "react";
 import { useEffect, useState } from 'react'
-import "./campgrounds.css";
+import "./campgrounds_list.css";
 import Container from 'react-bootstrap/Container';
 import { ReactDOM } from "react-dom";
 import { BrowserRouter as Router, Routes, Route, Link, } from 'react-router-dom';
 
 
 
-const Campground = () => {
+const Campground_list = () => {
   const [allCampgrounds, setAllCampgrounds] = useState(null);
   useEffect(() => {
     fetch("api/campgrounds", {
@@ -46,5 +46,5 @@ const Campground = () => {
     </Container>
   );
 }
-export default Campground;
+export default Campground_list;
 

@@ -2,7 +2,7 @@
 
 """CRUD operations."""
 
-from model import db, User, Campground, Map_Data, Review, Wishlist, Map_Data, connect_to_db
+from model import db, User, Campground, Map_Data, Review, Favorite, Map_Data, connect_to_db
 
 
 def create_user(email, password):
@@ -102,17 +102,17 @@ def get_review():
     return Review.query.all()
 
 
-def create_wishlist(user_id):
-    wishlist = Wishlist(
+def create_favorite(user_id):
+    favorite = Favorite(
         user_id=user_id
     )
 
-    return wishlist
+    return favorite
 
 
-def get_wishlist():
+def get_favorite():
 
-    return Wishlist.query.all()
+    return Favorite.query.all()
 
 
 # def create_rating(user, movie, score):

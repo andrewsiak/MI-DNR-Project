@@ -2,7 +2,7 @@
 from flask import Flask, render_template, request, flash, session, redirect, jsonify, abort
 # import flast_bcrypt import Bcrypt
 from model import connect_to_db
-from crud import *
+import crud
 from jinja2 import StrictUndefined
 
 
@@ -21,67 +21,83 @@ def homepage():
 
     return render_template("homepage.html")
 
+
 @app.route("/test")
 def test_page():
     """View test page."""
 
     return render_template("test.html")
 
+
 @app.route('/api/campgrounds')
 def get_campground_list():
-    campgrounds = get_campgrounds()
+    """API for campgrounds"""
+
+    campgrounds = crud.get_campgrounds()
     campground_list = []
     for campground in campgrounds:
        campground_list.append(campground.serialize())
     return jsonify(campground_list)
     # return jsonify([campground.serialize() for campground in campgrounds])
 
+
+
+@app.route('/api/campgrounds/<id>')
+def get_campground_by_id(id):
+    """Display information for a campground"""
+    campground_info = crud.get_campground_by_id(id)
+
+    return jsonify(campground_info)
+
+
 @app.route('/api/map_data/<id>')
 def get_map_data(id):
-
-    map_info = get_map_by_id(id)
+    """API for map data"""
+    map_info = crud.get_map_by_id(id)
 
     return jsonify(map_info)
 
 
+# @app.route('/login', methods=["POST"])
+# def user_login():
+#     """Log in a user"""
+#     # userEmails = get_user_by_email()
+#     email = request.json["email"]
+#     password = request.json["password"]
 
-@app.route('/api/login', methods=["POST"])
-def user_login():
-    userEmails = get_user_by_email()
-    email = request.json["email"]
-    password = request.json["password"]
-
-    user = User.query.filter_by(email=email).first()
+#     user = User.query.filter_by(email=email).first()
     
-    if user is None:
-        return jsonify({"error": "Unauthorized"}), 401
     
-    if not user.password:
-        return jsonify({"error": "Unauthorized"}), 401
+#     if user is None:
+#         return jsonify({"error": "Unauthorized"}), 401
     
-    return jsonify({
-        "id": user.id,
-        "email": user.email
-    })
-
-# @app.route("/login", methods=["POST"])
-# def process_login():
-#     """Process user login."""
-
-#     email = request.form.get("email")
-#     password = request.form.get("password")
-
-#     user = crud.get_user_by_email(email)
-#     if not user or user.password != password:
-#         flash("The email or password you entered was incorrect.")
-#     else:
-#         # Log in user by storing the user's email in session
-#         session["user_email"] = user.email
-#         flash(f"Welcome back, {user.email}!")
+#     if not user.password:
+#         return jsonify({"error": "Unauthorized"}), 401
     
+#     return jsonify({
+#         "id": user.id,
+#         "email": user.email
+#     })
+
+@app.route("/login", methods=["POST"])
+def process_login():
+    """Process user login."""
+
+    email = request.form.get("email")
+    password = request.form.get("password")
+
+    user = crud.get_user_by_email(email)
+    if not user or user.password != password:
+        print("The email or password you entered was incorrect.")
+    else:
+        # Log in user by storing the user's email in session
+        session["user_email"] = user.email
+        print(f"Welcome back, {user.email}!")
+    
+    return redirect("/")
 
 
-# @app.route("/register")
+# @app.route("/register_user")
 # def register_user():
 #     email = request.json["email"]
 #     password = request.json["password"]
@@ -95,9 +111,9 @@ def user_login():
     # hashed_password = bcrypt.generate_password_hash(password)
         
     # if using bcrypt replace below with "password=hashed_password" 
-    new_user = User(email=email, password=password)
+    # new_user = User(email=email, password=password)
 
-    return ""
+    # return ""
     
 
 

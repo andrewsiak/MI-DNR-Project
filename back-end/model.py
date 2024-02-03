@@ -15,7 +15,7 @@ class User(db.Model):
     password = db.Column(db.String)
 
     # review = db.relationship("Review", back_populates="user")
-    # wishlist = db.relationship("Wishlist", back_populates="user")
+    # favorite = db.relationship("Favorite", back_populates="user")
 
 
     def __repr__(self):
@@ -88,19 +88,19 @@ class Review(db.Model):
         return f"<Review review_id={self.review_id}>"
 
 
-class Wishlist(db.Model):
-    """user's campground wishlist"""
-    __tablename__ = "wishlists"
+class Favorite(db.Model):
+    """user's campground favorite"""
+    __tablename__ = "favorites"
 
-    wishlist_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    # user_id = db.Column(db.Integer, db.ForeignKey("wishlist.wishlist_id"))
+    favorite_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
+    # user_id = db.Column(db.Integer, db.ForeignKey("favorite.favorite_id"))
     # campground_id = db.Column(db.Integer, db.ForeignKey("campground.campground_id"))
 
-    # campground = db.relationship("Campground", back_populates="wishlist")
-    # user = db.relationship("User", back_populates="wishlist")
+    # campground = db.relationship("Campground", back_populates="favorite")
+    # user = db.relationship("User", back_populates="favorite")
 
     def __repr__(self):
-        return f"<Wishlist wishlist_id={self.wishlist_id}>"
+        return f"<Favorite favorite_id={self.favorite_id}>"
     
 
 def connect_to_db(flask_app, db_uri="postgresql:///dnrproject", echo=True):
