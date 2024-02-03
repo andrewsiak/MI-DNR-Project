@@ -1,5 +1,6 @@
 
-from flask import Flask, render_template, request, flash, session, redirect, jsonify
+from flask import Flask, render_template, request, flash, session, redirect, jsonify, abort
+# import flast_bcrypt import Bcrypt
 from model import connect_to_db
 from crud import *
 from jinja2 import StrictUndefined
@@ -26,9 +27,8 @@ def test_page():
 
     return render_template("test.html")
 
-# Will need to use the below - modify for this project api
 @app.route('/api/campgrounds')
-def get_campground():
+def get_campground_list():
     campgrounds = get_campgrounds()
     campground_list = []
     for campground in campgrounds:
@@ -36,6 +36,69 @@ def get_campground():
     return jsonify(campground_list)
     # return jsonify([campground.serialize() for campground in campgrounds])
 
+@app.route('/api/map_data/<id>')
+def get_map_data(id):
+
+    map_info = get_map_by_id(id)
+
+    return jsonify(map_info)
+
+
+
+@app.route('/api/login', methods=["POST"])
+def user_login():
+    userEmails = get_user_by_email()
+    email = request.json["email"]
+    password = request.json["password"]
+
+    user = User.query.filter_by(email=email).first()
+    
+    if user is None:
+        return jsonify({"error": "Unauthorized"}), 401
+    
+    if not user.password:
+        return jsonify({"error": "Unauthorized"}), 401
+    
+    return jsonify({
+        "id": user.id,
+        "email": user.email
+    })
+
+# @app.route("/login", methods=["POST"])
+# def process_login():
+#     """Process user login."""
+
+#     email = request.form.get("email")
+#     password = request.form.get("password")
+
+#     user = crud.get_user_by_email(email)
+#     if not user or user.password != password:
+#         flash("The email or password you entered was incorrect.")
+#     else:
+#         # Log in user by storing the user's email in session
+#         session["user_email"] = user.email
+#         flash(f"Welcome back, {user.email}!")
+    
+
+
+# @app.route("/register")
+# def register_user():
+#     email = request.json["email"]
+#     password = request.json["password"]
+
+#     user_exists = User.query.filter_by(email=email).first() is not None
+
+#     if user_exists:
+#         abort(409)
+
+
+    # hashed_password = bcrypt.generate_password_hash(password)
+        
+    # if using bcrypt replace below with "password=hashed_password" 
+    new_user = User(email=email, password=password)
+
+    return ""
+    
 
 
 

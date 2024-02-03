@@ -1,8 +1,7 @@
 // import React from "react";
 // import { useEffect, useState } from 'react'
-// import "./state_parks.css";
+// import "./map_data.css";
 // import Container from 'react-bootstrap/Container';
-// import { Navbar, Nav, NavLink, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 // import { ReactDOM } from "react-dom";
 // import { BrowserRouter as Router, Routes, Route, Link, } from 'react-router-dom';
 
@@ -11,7 +10,7 @@
 // const StateParks = () => {
 //   const [allStatParks, setAllStateParks] = useState(null);
 //   useEffect(() => {
-//     fetch("api/state_parks", {
+//     fetch("api/map_data", {
 //       method: "GET",
 //       // headers: {
 //       //   "Key": "your-api-key",

@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from 'react'
 import "./campgrounds.css";
 import Container from 'react-bootstrap/Container';
-import { Navbar, Nav, NavLink, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import { ReactDOM } from "react-dom";
 import { BrowserRouter as Router, Routes, Route, Link, } from 'react-router-dom';
 
