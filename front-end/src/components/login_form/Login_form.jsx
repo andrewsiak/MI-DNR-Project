@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 //   const [passwordError, setPasswordError] = useState("")  
 //   useEffect(() => {
 //     fetch("api/login", {
-//       method: "GET",
+//       method: "POST",
 
 //     })
 //       .then((response) => {
@@ -28,7 +28,7 @@ import { useNavigate } from "react-router-dom";
 //   }, []);
 
 function LoginForm({ onLogin }) {
-  // const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
@@ -39,7 +39,7 @@ function LoginForm({ onLogin }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {

@@ -83,6 +83,7 @@ for map_feature in features:
 
 # Create 10 users
 for n in range(10):
+    # username = f"testusername{n}"
     email = f"user{n}@test.com" 
     password = "test"
 
