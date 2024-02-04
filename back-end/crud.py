@@ -54,7 +54,7 @@ def get_campgrounds():
     return Campground.query.all()
 
 
-def get_campgrorunds_by_id(campground_id):
+def get_campgrounds_by_id(campground_id):
 
     return Campground.query.get(campground_id)
 

@@ -45,7 +45,7 @@ def get_campground_list():
 @app.route('/api/campgrounds/<id>')
 def get_campground_by_id(id):
     """Display information for a campground"""
-    campground_info = crud.get_campground_by_id(id)
+    campground_info = crud.get_campgrounds_by_id(id)
 
     return jsonify(campground_info)
 

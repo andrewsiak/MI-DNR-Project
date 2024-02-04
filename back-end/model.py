@@ -48,7 +48,9 @@ class Campground(db.Model):
     def serialize(self):
         return {"campground_id": self.campground_id,
                 "county": self.county,
-                "name": self.name}
+                "name": self.name,
+                "lat": self.latitude,
+                "lng": self.longitude}
 
 class Map_Data(db.Model):
     """A map"""

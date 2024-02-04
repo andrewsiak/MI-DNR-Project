@@ -6,10 +6,10 @@ import Home from './components/home/Home'
 import Nav_bar from './components/nav_bar/Nav_bar'
 import About from './components/about/About'
 import Users from './components/users/Users'
-import Campground from './components/campgrounds_list/Campgrounds_list'
 import LoginForm from './components/login_form/Login_form'
 import { BrowserRouter as Router, Routes, Route, Link,  } from 'react-router-dom';
 import Campground_body from './components/campground_body/campground_body'
+import Campground_list from './components/campgrounds_list/Campgrounds_list'
 
 
 function App() {
@@ -30,8 +30,9 @@ function App() {
             </Route>
             <Route path="/users" element={<Users/>}>
             </Route>
-            <Route path="/campgrounds" element={<Campground_body/>}>
-            </Route>
+            <Route path="/campgrounds" element={<Campground_body/>}/>
+              
+            <Route path="/campgrounds/:id" element={<Campground_body/>}/>
             <Route path="/login" element={<LoginForm/>}>
             </Route>
           

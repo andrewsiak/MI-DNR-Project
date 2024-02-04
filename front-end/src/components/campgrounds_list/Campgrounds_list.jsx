@@ -3,31 +3,12 @@ import { useEffect, useState } from 'react'
 import "./campgrounds_list.css";
 import Container from 'react-bootstrap/Container';
 import { ReactDOM } from "react-dom";
-import { BrowserRouter as Router, Routes, Route, Link, } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useParams} from 'react-router-dom';
+import Campground_body from "../campground_body/campground_body";
 
 
 
-const Campground_list = () => {
-  const [allCampgrounds, setAllCampgrounds] = useState(null);
-  useEffect(() => {
-    fetch("api/campgrounds", {
-      method: "GET",
-      // headers: {
-      //   "Key": "your-api-key",
-      //   "Host": "something.com",
-      // },
-    })
-      .then((response) => {
-        console.log(response);
-        return response.json()
-      })
-      .then((campgroundData) => {
-        setAllCampgrounds(campgroundData);
-        console.log(campgroundData);
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
+const Campground_list = ({allCampgrounds}) => {
 
   return (
     <Container>
@@ -37,7 +18,9 @@ const Campground_list = () => {
             {(allCampgrounds ?? []).map((campgroundData) => {
 
                 return(
-                    <li className="list-group-item" key={campgroundData.campground_id}> {campgroundData.name}</li>
+                    <li key={campgroundData.campground_id}>
+                       <Link to={`/campgrounds/${campgroundData.campground_id}`}>{campgroundData.name} ({campgroundData.lat}, {campgroundData.lng})</Link> 
+                    </li>
                 )
             })}
         </ol>
@@ -46,5 +29,7 @@ const Campground_list = () => {
     </Container>
   );
 }
+
+
 export default Campground_list;
 
