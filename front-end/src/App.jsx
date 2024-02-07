@@ -8,17 +8,27 @@ import About from './components/about/About'
 import Users from './components/users/Users'
 import LoginForm from './components/login_form/Login_form'
 import { BrowserRouter as Router, Routes, Route, Link,  } from 'react-router-dom';
-import Campground_body from './components/campground_body/campground_body'
-import Campground_list from './components/campgrounds_list/Campgrounds_list'
+import Campground_body from './components/campground_body/Campground_body'
+// import Campground_list from './components/campgrounds_list/Campgrounds_list'
+
+
+// require('dotenv').config()
+// const API_KEY = process.env.GOOGLE_KEY
+// console.log(GOOGLE_KEY)
 
 
 function App() {
-
+  const bgStyle = {    
+    backgroundImage: 'url(/images/lake-image.jpeg)',
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    width: '100vw',
+    height: '100vh'}
 
 
   return (
     <Router>
-      <div className = "App">
+      <div className = "App" style={bgStyle}>
 
         <Nav_bar />
         

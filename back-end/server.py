@@ -4,11 +4,14 @@ from flask import Flask, render_template, request, flash, session, redirect, jso
 from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined
+import os
 
 
 app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
+
+GOOGLE_MAP_KEY = os.environ['GOOGLE_KEY']
 
 
 

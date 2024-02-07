@@ -22,24 +22,47 @@ const Campground_details = ({allCampgrounds}) => {
     console.log(allCampgrounds)
 
     // loop through all the allcampgrounds and find one whose ID matches currentParkId 
-    for (let i=0; i<=length; i++) {
-      if(currentParkId === i) {
-        return allCampgrounds[i].map((name) => {
-          return <div>{name} test</div>
-        })
-      }
-    } 
+  //   let length = allCampgrounds.length;
+  //   for (let i=0; i<=length; i++) {
+  //   if(currentParkId === i) {
+  //     return Campground_details[i].map((name) => {
+  //       return <div>{name} test</div>
+  //     })
+  //   }
+  // }
+
+
+  // const [allCampgrounds, setAllCampgrounds] = useState([]);
+  // useEffect(() => {
+  //   fetch("api/campgrounds", {
+  //     method: "GET",
+
+  //   })
+  //     .then((response) => {
+  //       console.log(response);
+  //       return response.json()
+  //     })
+  //     .then((campgroundData) => {
+  //       setAllCampgrounds(campgroundData);
+  //       console.log(campgroundData);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
+  
+  //   return
+  
+   
     // display this parks information in what we return 
     // please display the lat / lng and park name 
   } else {
     return <div>Please select a park from the list!</div>
   }
   
-  return (
-    <div>
-      <h2>This is the selected Campground</h2>
-    </div>
-);
+//   return (
+//     <div>
+//       <h2>This is the selected Campground</h2>
+//     </div>
+// );
 }
 
 export default Campground_details;

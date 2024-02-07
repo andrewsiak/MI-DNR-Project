@@ -14,9 +14,9 @@ const Home = () =>{
     <Container>
       <div>Welcome to Michigan!</div>
 
-      <Row>
+      {/* <Row>
           <Image src="./images/lake-image.jpeg" fluid />
-      </Row>
+      </Row> */}
     </Container>
   )
 }

@@ -9,10 +9,7 @@ const Campground_body = () =>{
   useEffect(() => {
     fetch("api/campgrounds", {
       method: "GET",
-      // headers: {
-      //   "Key": "your-api-key",
-      //   "Host": "something.com",
-      // },
+
     })
       .then((response) => {
         console.log(response);
@@ -29,6 +26,7 @@ const Campground_body = () =>{
       <div>
         <Campground_list allCampgrounds={allCampgrounds}/>
         <Campground_details allCampgrounds={allCampgrounds}/>
+        {/* <Map_view/> */}
       </div>
 
     )
