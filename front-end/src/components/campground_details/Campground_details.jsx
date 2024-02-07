@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useState, useEffect, prop } from "react";
 import Campground_list from "../campgrounds_list/Campgrounds_list";
 
 import React from "react";
@@ -20,13 +20,29 @@ const Campground_details = ({allCampgrounds}) => {
     console.log("here is what you have to work with!")
     console.log(currentParkId)
     console.log(allCampgrounds)
+
     // loop through all the allcampgrounds and find one whose ID matches currentParkId 
+    for (let i=0; i<=length; i++) {
+      if(currentParkId === i) {
+        return allCampgrounds[i].map((name) => {
+          return <div>{name} test</div>
+        })
+      }
+    } 
     // display this parks information in what we return 
     // please display the lat / lng and park name 
   } else {
     return <div>Please select a park from the list!</div>
   }
   
+  return (
+    <div>
+      <h2>This is the selected Campground</h2>
+    </div>
+);
+}
+
+export default Campground_details;
 
 
     // const [currentCampground, setCurrentCampground] = useState([]);
@@ -51,12 +67,3 @@ const Campground_details = ({allCampgrounds}) => {
     // // }, 
     // []);
   
-
-    return (
-        <div>
-          <h2>This is the selected Campground</h2>
-        </div>
-    );
-  }
-  
-  export default Campground_details;
