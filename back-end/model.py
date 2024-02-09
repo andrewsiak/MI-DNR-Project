@@ -15,7 +15,7 @@ class User(db.Model):
     password = db.Column(db.String)
 
     # review = db.relationship("Review", back_populates="user")
-    # favorite = db.relationship("Favorite", back_populates="user")
+    # favorites = db.relationship("Favorite", back_populates="user")
 
 
     def __repr__(self):
@@ -95,8 +95,8 @@ class Favorite(db.Model):
     __tablename__ = "favorites"
 
     favorite_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
-    # user_id = db.Column(db.Integer, db.ForeignKey("favorite.favorite_id"))
-    # campground_id = db.Column(db.Integer, db.ForeignKey("campground.campground_id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    campground_id = db.Column(db.Integer, db.ForeignKey("campground.campground_id"))
 
     # campground = db.relationship("Campground", back_populates="favorite")
     # user = db.relationship("User", back_populates="favorite")

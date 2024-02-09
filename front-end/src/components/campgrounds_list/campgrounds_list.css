@@ -1,4 +1,21 @@
-.li {
+.background {
+  background-color: (33,37,41);
+
+}
+
+.list-group {
     list-style-type: none;
-    font-size: 12;
-  }
+    font-size: .8rem;
+    background-color: "#212529"; 
+    opacity: "85%" ;
+    padding-left: 30px;
+    max-height: 300px;
+    margin-bottom: 5px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+  
+body {    
+    margin: 0 !important;
+    padding: 0 !important;
+}

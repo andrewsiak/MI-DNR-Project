@@ -29,7 +29,7 @@ import { useNavigate } from "react-router-dom";
 
 function LoginForm({ onLogin }) {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [pass, setPass] = useState('');
 
   const handleSubmit = (event)=> {
     event.preventDefault();
@@ -40,13 +40,14 @@ function LoginForm({ onLogin }) {
       },
       body: JSON.stringify({ 
         "email": email, 
-        "password": password 
+        "password": pass 
       }),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
           onLogin(user);
-          navigate("/");
+          console.log(user.id)
+          navigate("/user/" + user.id);
         });
       }
     });

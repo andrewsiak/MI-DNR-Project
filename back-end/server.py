@@ -81,25 +81,16 @@ def user_login():
         "email": user.email
     })
 
-# @app.route("/login", methods=["POST"])
-# def process_login():
-#     """Process user login."""
-
-#     email = request.form.get("email")
-#     password = request.form.get("password")
-
-#     user = crud.get_user_by_email(email)
-#     if not user or user.password != password:
-#         print("The email or password you entered was incorrect.")
-#     else:
-#         # Log in user by storing the user's email in session
-#         session["user_email"] = user.email
-#         print(f"Welcome back, {user.email}!")
-    
-#     return redirect("/")
 
 
-# @app.route("/api//register_user")
+# @app.route("/favorites/<user.id>")
+# def favorites_by_user():
+#     return ''
+
+
+# 
+
+# @app.route("/api/register_user")
 # def register_user():
 #     email = request.json["email"]
 #     password = request.json["password"]

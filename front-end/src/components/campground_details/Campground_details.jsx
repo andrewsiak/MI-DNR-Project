@@ -6,7 +6,8 @@ import React from "react";
 import { ReactDOM } from "react-dom";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 
-
+// allow for users to mark and unmark as favorites and store in db
+// fetch post to server/db
 
 const Campground_details = ({allCampgrounds}) => {
   let location = useLocation();

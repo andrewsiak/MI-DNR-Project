@@ -24,7 +24,7 @@ const Campground_body = () => {
 
   return (
     <div>
-      <Container>
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
         <Row>
           <Col xs={4}>
             <Campground_list allCampgrounds={allCampgrounds} />
@@ -33,7 +33,7 @@ const Campground_body = () => {
             <Campground_details allCampgrounds={allCampgrounds} />
           </Col>
           <Col md="auto">
-            <GoogleMapView />
+            {/* <GoogleMapView /> */}
           </Col>
         </Row>
       </Container>
