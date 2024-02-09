@@ -1,6 +1,7 @@
 import Campground_details from "../campground_details/Campground_details";
 import Campground_list from "../campgrounds_list/Campgrounds_list";
 import { useState, useEffect } from "react";
+import GoogleMapView from "../map_view/Map_view"
 
 
 
@@ -26,7 +27,7 @@ const Campground_body = () =>{
       <div>
         <Campground_list allCampgrounds={allCampgrounds}/>
         <Campground_details allCampgrounds={allCampgrounds}/>
-        {/* <Map_view/> */}
+        <GoogleMapView/>
       </div>
 
     )

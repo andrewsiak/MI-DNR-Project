@@ -13,14 +13,14 @@ const center = {
   lng: -86.270
 };
 
-function googleMapView() {
+function GoogleMapView() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   })
-  if (!isLoaded) {
-    return <SkeletonText />
-  }
+  // if (!isLoaded) {
+  //   return <SkeletonText />
+  // }
 
   const [map, setMap] = React.useState(null)
 
@@ -37,22 +37,19 @@ function googleMapView() {
   }, [])
 
   return isLoaded ? (
-    <Box>
       
         <GoogleMap
       
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={5}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
         { /* Child components, such as markers, info windows, etc. */ }
-        <></>
       </GoogleMap>
 
-    </Box>
   ) : <></>
 }
 
-export default googleMapView
+export default React.memo(GoogleMapView)

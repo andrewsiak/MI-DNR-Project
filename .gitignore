@@ -3,6 +3,7 @@
 */env
 *package-lock.json
 *.env.local
+*front-end/.env
 
 
 # Logs

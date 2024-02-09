@@ -11,7 +11,6 @@ app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
-GOOGLE_MAP_KEY = os.environ['GOOGLE_KEY']
 
 
 
@@ -61,43 +60,43 @@ def get_map_data(id):
     return jsonify(map_info)
 
 
-# @app.route('/login', methods=["POST"])
-# def user_login():
-#     """Log in a user"""
-#     # userEmails = get_user_by_email()
-#     email = request.json["email"]
-#     password = request.json["password"]
+@app.route('/api/login', methods=["POST"])
+def user_login():
+    """Log in a user"""
+    # userEmails = get_user_by_email()
+    email = request.json["email"]
+    password = request.json["password"]
 
-#     user = User.query.filter_by(email=email).first()
+    user = crud.get_user_by_email(email=email).first()
     
     
-#     if user is None:
-#         return jsonify({"error": "Unauthorized"}), 401
-    
-#     if not user.password:
-#         return jsonify({"error": "Unauthorized"}), 401
-    
-#     return jsonify({
-#         "id": user.id,
-#         "email": user.email
-#     })
-
-@app.route("/login", methods=["POST"])
-def process_login():
-    """Process user login."""
-
-    email = request.form.get("email")
-    password = request.form.get("password")
-
-    user = crud.get_user_by_email(email)
     if not user or user.password != password:
-        print("The email or password you entered was incorrect.")
-    else:
-        # Log in user by storing the user's email in session
-        session["user_email"] = user.email
-        print(f"Welcome back, {user.email}!")
+    #     return jsonify({"error": "Unauthorized"}), 401
     
-    return redirect("/")
+    # if not user.password:
+        return jsonify({"error": "Unauthorized"}), 401
+    
+    return jsonify({
+        "id": user.id,
+        "email": user.email
+    })
+
+# @app.route("/login", methods=["POST"])
+# def process_login():
+#     """Process user login."""
+
+#     email = request.form.get("email")
+#     password = request.form.get("password")
+
+#     user = crud.get_user_by_email(email)
+#     if not user or user.password != password:
+#         print("The email or password you entered was incorrect.")
+#     else:
+#         # Log in user by storing the user's email in session
+#         session["user_email"] = user.email
+#         print(f"Welcome back, {user.email}!")
+    
+#     return redirect("/")
 
 
 # @app.route("/register_user")
