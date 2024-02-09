@@ -99,7 +99,7 @@ def user_login():
 #     return redirect("/")
 
 
-# @app.route("/register_user")
+# @app.route("/api//register_user")
 # def register_user():
 #     email = request.json["email"]
 #     password = request.json["password"]
