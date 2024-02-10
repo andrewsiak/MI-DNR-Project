@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 import Campground_body from "../campground_body/Campground_body";
 import Col from "react-bootstrap/Col";
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Button } from "react-bootstrap";
 
 // TODO - Favorite Campgrounds
 // if user logged in
@@ -23,41 +23,69 @@ import { ListGroup } from "react-bootstrap";
 
 const Campground_list = ({ allCampgrounds }) => {
   return (
-    // <Container className="bg-dark text-white opacity-75"> 
-    <Container style={{backgroundColor: "#212529", opacity: "85%", color:"#FFFCE2"}} > 
-    
-      <h2 style={{color:"#FFFCE2"}}>Find a Campground</h2>
-      {(allCampgrounds ?? []).map((campgroundData) => {
-        return (
-            <ListGroup className="list-group" >
-              {/* <Link to={`/campgrounds/${campgroundData.campground_id}`}> */}
-                {campgroundData.name}
-              {/* </Link> */}
-            </ListGroup>
-        );
-      })}
+    // <Container className="bg-dark text-white opacity-75">
+    <Container
+    // style={{
+    //   backgroundColor: "black",
+    //   opacity: ".8",
+    // }}
+    // style={{ backgroundColor: "#212529", opacity: "85%", color: "#FFFCE2" }}
+    >
+      <h2 style={{ color: "#FFFCE2" }}>Find a Campground</h2>
+
+      <ListGroup className="list-group">
+        {(allCampgrounds ?? []).map((campgroundData) => (
+          <ListGroup.Item
+            key={campgroundData.campground_id}
+            // style={{
+            //   backgroundColor: "black",
+            //   opacity: ".8",
+            //   color: "white",
+            //   borderColor: "black"
+            // }}
+          >
+            <Button
+              // style={{
+              //   backgroundColor: "black",
+              //   opacity: ".8",
+              //   color: "white",
+              //   borderColor: "#FFFCE2"
+              // }}
+              className="inputFont w-100"
+              name={campgroundData.name}
+              id={campgroundData.campground_id}
+              onClick={(e) => {
+                allCampgrounds(e.target.id);
+                changeButton(e.target.name);
+                handleClose();
+              }}
+            >
+              {campgroundData.name}
+            </Button>
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
     </Container>
   );
 };
-
-
+{
+  /* <ListGroup>
+{
+ listGroupData.map(item=>(
+     <ListGroup.Item className="modal-bg" key={item.id}><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Action And Adventure" value={item.value} onClick={e => { genre(e.target.value); changeButton(e.target.name); handleClose() }}>Action and Adventure</Button></ListGroup.Item>
+  )); 
+}
+</ListGroup> */
+}
 
 export default Campground_list;
-{/* <ListGroup>
-  {(allCampgrounds ?? []).map(campgroundData => (
-    <ListGroup.Item className="modal-bg">
-    <Button style={{ 
-      backgroundColor: "black", 
-      opacity: ".8", 
-      color: "white", 
-      borderColor: "red" }} 
-      className="inputFont w-100" 
-      name={campgroundData.name} 
-      value={campgroundData.value} 
-      onClick={e => { genre(e.target.value); 
-        changeButton(e.target.name); 
-        handleClose() }}>
-        Classics
-        </Button></ListGroup.Item>
-  ))}
-</ListGroup> */}
+
+// {(allCampgrounds ?? []).map((campgroundData) => {
+//   return (
+//       <ListGroup className="list-group" >
+//         {/* <Link to={`/campgrounds/${campgroundData.campground_id}`}> */}
+//           {campgroundData.name}
+//         {/* </Link> */}
+//       </ListGroup>
+//   );
+// })}

@@ -110,7 +110,7 @@ def create_favorite(user_id):
     return favorite
 
 
-def get_favorite():
+def get_favorites():
 
     return Favorite.query.all()
 

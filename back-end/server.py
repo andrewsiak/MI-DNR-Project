@@ -82,10 +82,21 @@ def user_login():
     })
 
 
+# @app.route('/account/<user.id>')
 
-# @app.route("/favorites/<user.id>")
-# def favorites_by_user():
-#     return ''
+# def user_page():
+
+
+#     favorites = crud.get_favorites().all()
+
+#     favorites_list = []
+#     for favorite in favorites:
+#        favorites_list.append(favorite.serialize())
+#     return jsonify(favorites_list)
+
+
+
+
 
 
 # 

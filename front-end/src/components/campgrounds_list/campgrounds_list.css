@@ -1,7 +1,7 @@
-.background {
+/* .background {
   background-color: (33,37,41);
 
-}
+} */
 
 .list-group {
     list-style-type: none;
@@ -9,13 +9,8 @@
     background-color: "#212529"; 
     opacity: "85%" ;
     padding-left: 30px;
-    max-height: 300px;
-    margin-bottom: 5px;
+    max-height: 600px;
+    max-width: 500px;
     overflow:scroll;
     -webkit-overflow-scrolling: touch;
-}
-  
-body {    
-    margin: 0 !important;
-    padding: 0 !important;
 }

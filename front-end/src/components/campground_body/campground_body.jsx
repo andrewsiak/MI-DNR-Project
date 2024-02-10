@@ -24,7 +24,7 @@ const Campground_body = () => {
 
   return (
     <div>
-      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+      <Container>
         <Row>
           <Col xs={4}>
             <Campground_list allCampgrounds={allCampgrounds} />

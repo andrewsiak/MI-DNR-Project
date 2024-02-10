@@ -7,7 +7,7 @@ import { ReactDOM } from "react-dom";
 import { BrowserRouter as Router, Routes, Route, Link,  } from 'react-router-dom';
 import About from "../about/About";
 import Home from "../home/Home";
-import Users from "../users/Users";
+import User from "../users/Users";
 import LoginForm from "../login_form/Login_form";
 import Campground from "../campgrounds_list/Campgrounds_list";
 
@@ -30,6 +30,8 @@ const Nav_bar = () =>{
                 <Nav.Link as={Link} to={"about"}>About</Nav.Link>
                 <Nav.Link as={Link} to={"login"}>Login</Nav.Link>
                 <Nav.Link as={Link} to={"campgrounds"}>Campgrounds</Nav.Link>
+                <Nav.Link as={Link} to={"account"}>Your Account</Nav.Link>
+
 
 
                 {/* <NavDropdown title="Menu" id="basic-nav-dropdown">
