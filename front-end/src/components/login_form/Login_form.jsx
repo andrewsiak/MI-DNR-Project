@@ -31,23 +31,23 @@ function LoginForm({ onLogin }) {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
     fetch("/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: email,
-        password: password,
+        email,
+        password,
       }),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
-          onLogin(user);
+          // onLogin(user);
           console.log(user.id);
-          navigate("/user/" + user.id);
+          navigate("/account/" + user.id);
         });
       }
     });
@@ -63,10 +63,11 @@ function LoginForm({ onLogin }) {
           <Form.Label>Email address</Form.Label>
           <Form.Control
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="enter your email"
             name="email"
+            onChange={(e) => setEmail(e.target.value)}
+
           />
         </Form.Group>
 
@@ -74,10 +75,11 @@ function LoginForm({ onLogin }) {
           <Form.Label>Password</Form.Label>
           <Form.Control
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="********"
             name="password"
+            onChange={(e) => setPassword(e.target.value)}
+
           />
         </Form.Group>
         <Button variant="primary" type="submit">

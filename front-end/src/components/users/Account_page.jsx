@@ -3,6 +3,7 @@ import Campground_list from "../campgrounds_list/Campgrounds_list";
 import { Col, Container, Row } from "react-bootstrap";
 import { Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import LoginForm from "../login_form/Login_form";
 
 
 const Users = () => {
@@ -24,19 +25,7 @@ const Users = () => {
 
   return (
     <div>
-      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
-        <Row>
-          <Col >
-            <Campground_list allCampgrounds={allCampgrounds} />
-          </Col>
-          <Col xs={3}>
-            <Campground_details allCampgrounds={allCampgrounds} />
-          </Col>
-          <Col md="auto">
-            {/* <GoogleMapView /> */}
-          </Col>
-        </Row>
-      </Container>
+      test
     </div>
   );
 };

@@ -66,7 +66,8 @@ def user_login():
     # userEmails = get_user_by_email()
     email = request.json["email"]
     password = request.json["password"]
-
+    print("#" * 20)
+    print("the JSON is:", request.json)
     user = crud.get_user_by_email(email=email).first()
     
     
@@ -82,17 +83,17 @@ def user_login():
     })
 
 
-# @app.route('/account/<user.id>')
+@app.route('/account/<id>')
 
-# def user_page():
+def user_page():
 
 
-#     favorites = crud.get_favorites().all()
+    favorites = crud.get_favorites().all()
 
-#     favorites_list = []
-#     for favorite in favorites:
-#        favorites_list.append(favorite.serialize())
-#     return jsonify(favorites_list)
+    favorites_list = []
+    for favorite in favorites:
+       favorites_list.append(favorite.serialize())
+    return jsonify(favorites_list)
 
 
 
