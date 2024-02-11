@@ -7,7 +7,7 @@ import { ReactDOM } from "react-dom";
 import { BrowserRouter as Router, Routes, Route, Link,  } from 'react-router-dom';
 import About from "../about/About";
 import Home from "../home/Home";
-import User from "../users/Account_page";
+import Account_page from "../user_account/Account_page";
 import LoginForm from "../login_form/Login_form";
 import Campground from "../campgrounds_list/Campgrounds_list";
 

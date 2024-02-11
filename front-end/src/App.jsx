@@ -5,7 +5,7 @@ import Header from './components/header/Header'
 import Home from './components/home/Home'
 import Nav_bar from './components/nav_bar/Nav_bar'
 import About from './components/about/About'
-import Users from './components/users/Users'
+import Users from './components/user_account/Account_page'
 import LoginForm from './components/login_form/Login_form'
 import { BrowserRouter as Router, Routes, Route, Link,  } from 'react-router-dom';
 import Campground_body from './components/campground_body/Campground_body'
@@ -18,6 +18,12 @@ import Campground_body from './components/campground_body/Campground_body'
 
 
 function App() {
+  const [userId, setUserId] = useState(null);
+  console.log(userId)
+  useEffect(() => {
+    setUserId(localStorage.getItem(localStorage.getItem("userId") || null))
+  }, [])
+
   const bgStyle = {    
     backgroundImage: 'url(/images/lake-image.jpeg)',
     backgroundSize: "cover",
@@ -34,17 +40,17 @@ function App() {
         
         <Routes>
 
-            <Route path="about" element={<About/>}>
-            </Route>
-            <Route path="/" element={<Home/>}>
-            </Route>
-            <Route path="/users" element={<Users/>}>
-            </Route>
-            <Route path="/campgrounds" element={<Campground_body/>}/>
+            <Route path="about" element={<About/>}/>
+            <Route path="/" element={<Home userId={userId}/>}/>
+            {/* need to update users path to account */}
+            <Route path="/users" element={<Users userId={userId}/>}/>
+            <Route path="/account" element={<Users userId={userId}/>}/>
+
+            
+            <Route path="/campgrounds" element={<Campground_body userId={userId}/>}/>
               
             <Route path="/campgrounds/:id" element={<Campground_body/>}/>
-            <Route path="/login" element={<LoginForm/>}>
-            </Route>
+            <Route path="/login" element={<LoginForm userId={userId} setUserId={setUserId}/>}/>
           
         </Routes>
 

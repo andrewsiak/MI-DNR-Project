@@ -23,34 +23,33 @@ import { ListGroup, Button } from "react-bootstrap";
 
 const Campground_list = ({ allCampgrounds }) => {
   return (
-    // <Container className="bg-dark text-white opacity-75">
     <Container
     // style={{
     //   backgroundColor: "black",
     //   opacity: ".8",
     // }}
-    // style={{ backgroundColor: "#212529", opacity: "85%", color: "#FFFCE2" }}
+    style={{ backgroundColor: "black", opacity: "85%", color: "#FFFCE2" }}
     >
       <h2 style={{ color: "#FFFCE2" }}>Find a Campground</h2>
 
-      <ListGroup className="list-group">
+      <ListGroup>
         {(allCampgrounds ?? []).map((campgroundData) => (
           <ListGroup.Item
             key={campgroundData.campground_id}
-            // style={{
-            //   backgroundColor: "black",
-            //   opacity: ".8",
-            //   color: "white",
-            //   borderColor: "black"
-            // }}
+            style={{
+              backgroundColor: "black",
+              opacity: ".9",
+              color: "white",
+              borderColor: "black"
+            }}
           >
             <Button
-              // style={{
-              //   backgroundColor: "black",
-              //   opacity: ".8",
-              //   color: "white",
-              //   borderColor: "#FFFCE2"
-              // }}
+              style={{
+                backgroundColor: "#333D29",
+                opacity: ".8",
+                color: "white",
+                borderColor: "#FFFCE2"
+              }}
               className="inputFont w-100"
               name={campgroundData.name}
               id={campgroundData.campground_id}

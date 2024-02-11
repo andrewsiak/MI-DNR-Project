@@ -63,7 +63,7 @@ def get_map_data(id):
 @app.route('/api/login', methods=["POST"])
 def user_login():
     """Log in a user"""
-    # userEmails = get_user_by_email()
+    
     email = request.json["email"]
     password = request.json["password"]
     print("#" * 20)
@@ -72,9 +72,6 @@ def user_login():
     
     
     if not user or user.password != password:
-    #     return jsonify({"error": "Unauthorized"}), 401
-    
-    # if not user.password:
         return jsonify({"error": "Unauthorized"}), 401
     
     return jsonify({
@@ -83,7 +80,7 @@ def user_login():
     })
 
 
-@app.route('/account/<id>')
+@app.route('/account')
 
 def user_page():
 

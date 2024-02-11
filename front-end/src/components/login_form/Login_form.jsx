@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./login_form.css";
 import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 // const LoginForm = (props) => {
@@ -26,13 +25,15 @@ import { useNavigate } from "react-router-dom";
 //       .catch((error) => console.log(error));
 //   }, []);
 
-function LoginForm({ onLogin }) {
+function LoginForm({userId, setUserId}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const userLogin = { email, password };
+
     fetch("/api/login", {
       method: "POST",
       headers: {
@@ -42,16 +43,26 @@ function LoginForm({ onLogin }) {
         email,
         password,
       }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => {
+    })
+      .then((response) => {
+      if (response.ok) {
+        response.json()
+      .then((user) => {
+          setUserId(user.id)
+          localStorage.setItem("userId", user.id);
           // onLogin(user);
           console.log(user.id);
-          navigate("/account/" + user.id);
+          navigate("/");
         });
       }
     });
   };
+
+  // useEffect(() => {
+  //   setLoggedIn(localStorage.getItem(localStorage.getItem("token") || false)
+  //   }, [])
+
+
   return (
     <div className="color-overlay d-flex justify-content-center align-items-center">
       <Form className="login-form" onSubmit={handleSubmit}>
@@ -67,7 +78,6 @@ function LoginForm({ onLogin }) {
             placeholder="enter your email"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
-
           />
         </Form.Group>
 
@@ -79,7 +89,6 @@ function LoginForm({ onLogin }) {
             placeholder="********"
             name="password"
             onChange={(e) => setPassword(e.target.value)}
-
           />
         </Form.Group>
         <Button variant="primary" type="submit">
@@ -120,4 +129,4 @@ export default LoginForm;
 //   <Button variant="primary" type="submit">
 //     Submit
 //   </Button>
-// </Form>; 
+// </Form>;
