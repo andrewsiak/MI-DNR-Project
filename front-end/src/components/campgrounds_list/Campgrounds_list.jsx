@@ -67,24 +67,7 @@ const Campground_list = ({ allCampgrounds }) => {
     </Container>
   );
 };
-{
-  /* <ListGroup>
-{
- listGroupData.map(item=>(
-     <ListGroup.Item className="modal-bg" key={item.id}><Button style={{ backgroundColor: "black", opacity: ".8", color: "white", borderColor: "red" }} className="inputFont w-100" name="Action And Adventure" value={item.value} onClick={e => { genre(e.target.value); changeButton(e.target.name); handleClose() }}>Action and Adventure</Button></ListGroup.Item>
-  )); 
-}
-</ListGroup> */
-}
+
 
 export default Campground_list;
 
-// {(allCampgrounds ?? []).map((campgroundData) => {
-//   return (
-//       <ListGroup className="list-group" >
-//         {/* <Link to={`/campgrounds/${campgroundData.campground_id}`}> */}
-//           {campgroundData.name}
-//         {/* </Link> */}
-//       </ListGroup>
-//   );
-// })}

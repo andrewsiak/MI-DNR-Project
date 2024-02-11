@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { useState, useEffect, prop } from "react";
 import Campground_list from "../campgrounds_list/Campgrounds_list";
-
+import Account_page from "../user_account/Account_page";
 import React from "react";
 import { ReactDOM } from "react-dom";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
