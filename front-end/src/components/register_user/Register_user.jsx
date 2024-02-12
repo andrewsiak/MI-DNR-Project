@@ -72,25 +72,7 @@ function Signup() {
     </Form>
     </div>
   );
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <input
-//         type="text"
-//         name="username"
-//         placeholder="Username"
-//         value={formData.username}
-//         onChange={handleChange}
-//       />
-//       <input
-//         type="password"
-//         name="password"
-//         placeholder="Password"
-//         value={formData.password}
-//         onChange={handleChange}
-//       />
-//       <button type="submit">Sign Up</button>
-//     </form>
-//   );
+
 }
 
 export default Signup;

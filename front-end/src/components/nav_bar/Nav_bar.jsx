@@ -58,3 +58,5 @@ const Nav_bar = () =>{
 
 export default Nav_bar
 
+
+{/* <Route>"path="/url/:id"</Route> */}

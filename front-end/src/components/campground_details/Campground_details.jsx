@@ -50,7 +50,7 @@ const Campground_details = ({allCampgrounds}) => {
   //     .catch((error) => console.log(error));
   // }, []);
   
-  //   return
+  //   return ()
   
    
     // display this parks information in what we return 
