@@ -6,31 +6,20 @@ import { Col, Container, Row, Card } from "react-bootstrap";
 import { Route } from "react-router-dom";
 
 const Campground_body = () => {
-  const [allCampgrounds, setAllCampgrounds] = useState([]);
-  useEffect(() => {
-    fetch("api/campgrounds", {
-      method: "GET",
-    })
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((campgroundData) => {
-        setAllCampgrounds(campgroundData);
-        console.log(campgroundData);
-      })
-      .catch((error) => console.log(error));
-  }, []);
 
   return (
     <div>
       <Container>
         <Row>
           <Col xs={4}>
-            <Campground_list allCampgrounds={allCampgrounds} />
+            <Campground_list 
+            // allCampgrounds={allCampgrounds} 
+            />
           </Col>
           <Col xs={3}>
-            <Campground_details allCampgrounds={allCampgrounds} />
+            <Campground_details 
+            // allCampgrounds={allCampgrounds} 
+            /> 
           </Col>
           <Col md={5}               style={{
                 backgroundColor: "#A4AC86"}}>
