@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Image from 'react-bootstrap/Image';
-import Row from 'react-bootstrap/Row';
+import { Col, Container } from "react-bootstrap";
+import { Route, Routes } from "react-router-dom";
+import Campground_body from "../campground_body/Campground_body";
+import Account_page from "../user_account/Account_page";
+import LoginForm from "../login_form/Login_form";
 
-
-
-
-
-const Home = () =>{
-  return(
+const Home = () => {
+  return (
     <Container>
       <div>Welcome to Michigan!</div>
+      <Routes>
+        <Route path="/campgrounds" element={<Campground_body />} />
+        <Route path="/account" element={<Account_page />} />
 
+        <Route path="/login" element={<LoginForm />} />
+      </Routes>
       {/* <Row>
           <Image src="./images/lake-image.jpeg" fluid />
       </Row> */}
     </Container>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
 
 //  will need to use something like this later
 
@@ -55,12 +57,11 @@ export default Home
 //       .catch((error) => console.log(error));
 //   }, []);
 
-  
 //   return (
 //     <Container>
 //     <div>
 //       <h2>Show Something!</h2>
-// {/*         
+// {/*
 //         version 1: */}
 //         {/* {a_campground.map((campground) => (
 //           <div className="campground" key={campground_id}>
@@ -76,11 +77,8 @@ export default Home
 // }
 // export default Campground;
 
-
-
 // const Home = () =>{
 //     return (
-
 
 //     );
 //   }

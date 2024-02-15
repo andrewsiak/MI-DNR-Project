@@ -1,7 +1,8 @@
-import { Container, Card } from "react-bootstrap";
+import { Container, Card, Button } from "react-bootstrap";
 import { useState, useEffect, prop } from "react";
 import Campground_list from "../campgrounds_list/Campgrounds_list";
 import Account_page from "../user_account/Account_page";
+import Favorites_By_User from "../favorites/favorites";
 import React from "react";
 import { ReactDOM } from "react-dom";
 import {
@@ -16,90 +17,97 @@ import {
 // allow for users to mark and unmark as favorites and store in db
 // fetch post to server/db
 
-const Campground_details = ({}) => {
-  // const [allCampgrounds, setAllCampgrounds] = useState([]);
-  // useEffect(() => {
-  //   fetch("api/campgrounds", {
-  //     method: "GET",
-  //   })
-  //     .then((response) => {
-  //       console.log(response);
-  //       return response.json();
-  //     })
-  //     .then((campgroundData) => {
-  //       setAllCampgrounds(campgroundData);
-  //       // console.log(campgroundData);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
+const Campground_details = ({ campground }) => {
+  const campgroundName = campground.name;
+  const campgroundCounty = campground.county;
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log('hello');
-  
-  }
+  // console.log(campground);
 
-  // let { id } = useParams();
-  // need to destructure props to display name id
-  // once Favorites component is complete, import favorites to display in this component
-  // console.log(id);
-  // let currentParkId = -1;
+  if (campground !== null) {
+    const [favorite, setFavorite] = useState([]);
 
-  // if (location.pathname.split('/').length > 2) {
-  //   currentParkId = location.pathname.split('/')[2]
-  // }
-
-  // if (allCampgrounds.length > 0 && currentParkId !== -1) {
-  //   console.log("here is what you have to work with!");
-  //   console.log(currentParkId);
-  //   console.log(allCampgrounds);
-
-    // loop through all the allcampgrounds and find one whose ID matches currentParkId
-    //   let length = allCampgrounds.length;
-    //   for (let i=0; i<=length; i++) {
-    //   if(currentParkId === i) {
-    //     return Campground_details[i].map((name) => {
-    //       return <div>{name} test</div>
+    // const [allCampgrounds, setAllCampgrounds] = useState([]);
+    // useEffect(() => {
+    //   fetch("api/campgrounds", {
+    //     method: "GET",
+    //   })
+    //     .then((response) => {
+    //       console.log(response);
+    //       return response.json();
     //     })
-    //   }
-    // }
+    //     .then((campgroundData) => {
+    //       setAllCampgrounds(campgroundData);
+    //       // console.log(campgroundData);
+    //     })
+    //     .catch((error) => console.log(error));
+    // }, []);
 
+    // const handleClick = (e) => {
+    //   e.preventDefault();
+    //   console.log("hello");
+    // };
+    // console.log(campground);
 
-    //   return ()
-
-    // display this parks information in what we return
-    // please display the lat / lng and park name  <Card.Link href={/book/${id}}>{title}</Card.Link>
-  // } else {
     return (
-      
-      <div>
-        <div>Please select a park from the list!</div>
-        <Card>Card Text {}</Card>
+      <div
+        // className="campground-information-panels"
+        style={{
+          backgroundColor: "#333D29",
+          opacity: ".8",
+          color: "#FFFCE2",
+          borderColor: "#FFFCE2",
+          padding: 12,
+          fontSize: 12,
+        }}
+      >
+        <h3 style={{ color: "#FFFCE2" }}>Campground Information</h3>
+
+        <div>Location</div>
+        <div
+          style={{
+            paddingBottom: 20,
+            paddingLeft: 12,
+            color: "white",
+            fontSize: 15,
+          }}
+        >
+          {campgroundName}
+        </div>
+        <div>County </div>
+        <div
+          style={{
+            paddingBottom: 20,
+            paddingLeft: 12,
+            color: "white",
+            fontSize: 15,
+          }}
+        >
+          {campgroundCounty}
+        </div>
+
+        <Button
+          onClick={Favorites_By_User.handleFavorite}
+          id="submit-button"
+          className="button"
+        >
+          Save for Later {Favorites_By_User.campgroundFavorites}
+        </Button>
+        <Button
+          onClick={Favorites_By_User.handleUnfavorite}
+          id="submit-button"
+          className="button"
+        >
+          Remove {Favorites_By_User.campgroundFavorites}
+        </Button>
       </div>
     );
-
+  } else {
+    return (
+      <div>
+        <h2>Pick a campground!</h2>
+      </div>
+    );
+  }
 };
 
 export default Campground_details;
-
-// const [currentCampground, setCurrentCampground] = useState([]);
-// useEffect(
-// //     () => {
-// //   fetch("api/campgrounds", {
-// //     method: "GET",
-// //     // headers: {
-// //     //   "Key": "your-api-key",
-// //     //   "Host": "something.com",
-// //     // },
-// //   })
-// //     .then((response) => {
-// //       console.log(response);
-// //       return response.json()
-// //     })
-// //     .then((campgroundData) => {
-// //       setAllCampgrounds(campgroundData);
-// //       console.log(campgroundData);
-// //     })
-// //     .catch((error) => console.log(error));
-// // },
-// []);

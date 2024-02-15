@@ -102,17 +102,20 @@ def get_review():
     return Review.query.all()
 
 
-def create_favorite(user_id):
+def create_favorite(user_id, campground_id, is_favrorite):
     favorite = Favorite(
-        user_id=user_id
+        user_id=user_id,
+        campground_id=campground_id,
+        is_favrorite=is_favrorite
+        
     )
 
     return favorite
 
 
-def get_favorites():
+def get_favorites(user_id):
 
-    return Favorite.query.all()
+    return Favorite.query.get(user_id)
 
 
 # def create_rating(user, movie, score):

@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./login_form.css";
 import Container from "react-bootstrap/Container";
 import { Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-
-
-function LoginForm({userId, setUserId}) {
+function LoginForm({ userId, setUserId }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -24,33 +22,35 @@ function LoginForm({userId, setUserId}) {
         email,
         password,
       }),
-    })
-      .then((response) => {
+    }).then((response) => {
       if (response.ok) {
-        response.json()
-      .then((user) => {
-          setUserId(user.id)
+        response.json().then((user) => {
+          setUserId(user.id);
           localStorage.setItem("userId", user.id);
+
           // onLogin(user);
-          console.log(user.id);
+          // console.log(user.id);
           navigate("/");
         });
       }
     });
   };
 
-
-
   return (
-    <div className="color-overlay d-flex justify-content-center align-items-center">
-      <Form className="login-form" onSubmit={handleSubmit}>
+    <div
+      className="color-overlay 
+    
+    "
+    >
+      <Form className="box" onSubmit={handleSubmit}>
         <Form.Label>
-          <h3>Please Sign In</h3>{" "}
+          <h3>Please Sign In</h3>
         </Form.Label>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
+            className="input"
             value={email}
             type="email"
             placeholder="enter your email"
@@ -62,6 +62,7 @@ function LoginForm({userId, setUserId}) {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
+            className="input"
             value={password}
             type="password"
             placeholder="********"
@@ -69,7 +70,18 @@ function LoginForm({userId, setUserId}) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button
+          // variant="success"
+          id="submit-button"
+          className="button"
+          type="submit"
+          // style={{
+          //   backgroundColor: "#333D29",
+          //   opacity: ".8",
+          //   color: "white",
+          //   borderColor: "#FFFCE2",
+          // }}
+        >
           Log In
         </Button>
       </Form>
@@ -78,4 +90,3 @@ function LoginForm({userId, setUserId}) {
 }
 
 export default LoginForm;
-

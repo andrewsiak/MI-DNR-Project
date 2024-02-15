@@ -1,16 +1,49 @@
 .masthead {
-    min-height: 100vh;
-    position: relative;
+  min-height: 100vh;
+  position: relative;
 }
 
 .color-overlay {
-    position: absolute;
-    background-color: rgba(0,0,0,0.2);
-    height: 100%;
-    width: 100%;
-    mix-blend-mode: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: normal;
+  /* padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px; */
 }
 
 form {
-    background-color: rgb(241, 249, 249);
+  background-color: #656D4A;
+  height: 300px;
+  width: 400px;
+  border-radius: 15px;
+  color: #fffce2;
 }
+
+.input {
+  background-color: #c2c5aa;
+}
+
+.box {
+  padding: 10px;
+}
+
+button#submit-button {
+    background-color: #333D29;
+    opacity: ".8";
+    color: #fff;
+    border-color: #FFFCE2;
+  }
+
+#submit-button:hover {
+  background-color: #582F0E;
+  opacity: .8;
+  color: #fff;
+  border-color: #FFFCE2;
+}
+

@@ -97,6 +97,7 @@ class Favorite(db.Model):
     favorite_id = db.Column(db.Integer, autoincrement=True, primary_key=True )
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     campground_id = db.Column(db.Integer, db.ForeignKey("campground.campground_id"))
+    is_favrorite = db.Column(db.Boolean, default=None)
 
     # campground = db.relationship("Campground", back_populates="favorite")
     # user = db.relationship("User", back_populates="favorite")

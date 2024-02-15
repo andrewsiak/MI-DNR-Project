@@ -6,16 +6,9 @@ import crud
 from jinja2 import StrictUndefined
 import os
 
-
 app = Flask(__name__)
 app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
-
-
-
-
-
-
 
 @app.route("/")
 def homepage():
@@ -42,8 +35,6 @@ def get_campground_list():
     return jsonify(campground_list)
     # return jsonify([campground.serialize() for campground in campgrounds])
 
-
-
 @app.route('/api/campgrounds/<id>')
 def get_campground_by_id(id):
     """Display information for a campground"""
@@ -63,13 +54,12 @@ def get_map_data(id):
 @app.route('/api/login', methods=["POST"])
 def user_login():
     """Log in a user"""
-    
+
     email = request.json["email"]
     password = request.json["password"]
     print("#" * 20)
     print("the JSON is:", request.json)
     user = crud.get_user_by_email(email=email).first()
-    
     
     if not user or user.password != password:
         return jsonify({"error": "Unauthorized"}), 401
@@ -79,10 +69,9 @@ def user_login():
         "email": user.email
     })
 
+@app.route('/favorites', methods=["POST"])
 
-@app.route('/account')
-
-def user_page():
+def user_favorites():
 
 
     favorites = crud.get_favorites().all()
@@ -91,6 +80,21 @@ def user_page():
     for favorite in favorites:
        favorites_list.append(favorite.serialize())
     return jsonify(favorites_list)
+
+
+if __name__ == "__main__":
+    # with app.appcontext:
+            
+    connect_to_db(app)
+    app.run(host="0.0.0.0", debug=True)
+
+    # @app.route('/account')
+
+# def user_account(id):
+    
+#     user_info = crud.get_user_by_id(id)
+
+#     return jsonify(user_info)
 
 
 
@@ -140,11 +144,3 @@ def user_page():
     #  melon_dicts = melon.to_dict() for melon in melons
     #  return jsonify({melon.melon_code: melon_dicts})
 
-
-if __name__ == "__main__":
-    # with app.appcontext:
-            
-    connect_to_db(app)
-    app.run(host="0.0.0.0", debug=True)
-
-    

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./campgrounds_list.css";
 import Container from "react-bootstrap/Container";
-import { ReactDOM } from "react-dom";
+import { ReactDOM, state } from "react-dom";
 import {
   BrowserRouter as Router,
   Routes,
@@ -10,9 +10,9 @@ import {
   useParams,
 } from "react-router-dom";
 import Campground_body from "../campground_body/Campground_body";
-import Col from "react-bootstrap/Col";
+import { Col } from "react-bootstrap";
 import { ListGroup, Button } from "react-bootstrap";
-import { propTypes } from "react-bootstrap/esm/Image";
+import Favorites_By_User from "../favorites/favorites";
 
 // TODO - Favorite Campgrounds
 // if user logged in
@@ -21,8 +21,9 @@ import { propTypes } from "react-bootstrap/esm/Image";
 // populate star next to line item
 // favoriting/unfavoriting will be handled in campground details
 
-const Campground_list = ({}) => {
+const Campground_list = ({ setCampgroundFn }) => {
   const [allCampgrounds, setAllCampgrounds] = useState([]);
+
   useEffect(() => {
     fetch("api/campgrounds", {
       method: "GET",
@@ -37,9 +38,6 @@ const Campground_list = ({}) => {
       })
       .catch((error) => console.log(error));
   }, []);
-  console.log(allCampgrounds)
-  console.log(allCampgrounds.campground_id)
-  
 
   return (
     <Container
@@ -55,50 +53,42 @@ const Campground_list = ({}) => {
         {(allCampgrounds ?? []).map((campgroundData) => (
           <ListGroup.Item
             key={campgroundData.campground_id}
-            id={campgroundData.campground_id}
-            name={campgroundData.name}
-            lat={campgroundData.lat}
-            lng={campgroundData.lng}
-            onClick={(e) => {
-              // alert(e.target.id);
-              console.log(e.target.id);
-              console.log(e.target.name);
-              console.log(e.target.lat);
-              console.log(e.target.lng);
-
-              // changeButton(e.target.name);
-              // handleClose();
+            style={{
+              backgroundColor: "black",
+              opacity: ".9",
+              color: "white",
+              borderColor: "black",
             }}
-            
-            // style={{
-            //   backgroundColor: "black",
-            //   opacity: ".9",
-            //   color: "white",
-            //   borderColor: "black"
-            // }}
           >
-            <Button
+            <Link>
+              <Button
+                onClick={(e) => {
+                  setCampgroundFn(campgroundData);
+                }}
+                className="inputFont w-100"
                 style={{
                   backgroundColor: "#333D29",
+                  fontSize: 12,
                   opacity: ".8",
                   color: "white",
                   borderColor: "#FFFCE2",
                 }}
-                className="inputFont w-100"
-             
-              // onClick={(e) => {
-              //   // alert(e.target.id);
-              //   console.log(e.target.id);
-              //   console.log(e.target.name);
-              //   console.log(e.target.lat);
-              //   console.log(e.target.lng);
-
-              //   // changeButton(e.target.name);
-              //   // handleClose();
-              // }}
-            >
-              {campgroundData.name}
-            </Button>
+              >
+                {campgroundData.name}
+                {/* {Favorites_By_User.favorited && ( */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-star-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                </svg>
+                {/* )} */}
+              </Button>
+            </Link>
           </ListGroup.Item>
         ))}
       </ListGroup>
