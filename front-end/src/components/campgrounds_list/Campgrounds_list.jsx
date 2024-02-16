@@ -74,7 +74,7 @@ const Campground_list = ({ setCampgroundFn }) => {
                   borderColor: "#FFFCE2",
                 }}
               >
-                {campgroundData.name}
+                {campgroundData.name} {"  "}
                 {/* {Favorites_By_User.favorited && ( */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

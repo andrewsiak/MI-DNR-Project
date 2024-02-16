@@ -35,20 +35,20 @@ def get_campground_list():
     return jsonify(campground_list)
     # return jsonify([campground.serialize() for campground in campgrounds])
 
-@app.route('/api/campgrounds/<id>')
-def get_campground_by_id(id):
-    """Display information for a campground"""
-    campground_info = crud.get_campgrounds_by_id(id)
+# @app.route('/api/campgrounds/<id>')
+# def get_campground_by_id(id):
+#     """Display information for a campground"""
+#     campground_info = crud.get_campgrounds_by_id(id)
 
-    return jsonify(campground_info)
+#     return jsonify(campground_info)
 
 
-@app.route('/api/map_data/<id>')
-def get_map_data(id):
-    """API for map data"""
-    map_info = crud.get_map_by_id(id)
+# @app.route('/api/map_data/<id>')
+# def get_map_data(id):
+#     """API for map data"""
+#     map_info = crud.get_map_by_id(id)
 
-    return jsonify(map_info)
+#     return jsonify(map_info)
 
 
 @app.route('/api/login', methods=["POST"])

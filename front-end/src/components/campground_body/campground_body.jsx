@@ -7,6 +7,9 @@ import { Route } from "react-router-dom";
 
 const Campground_body = () => {
   const [campground, setCampground] = useState({});
+  console.log(campground)
+  const campgroundLat = campground.lat;
+  const campgroundLng = campground.lng;
 
   // console.log(campground);
   return (
@@ -25,11 +28,14 @@ const Campground_body = () => {
           <Col
             lg={5}
             style={{
-              backgroundColor: "#A4AC86",
+              backgroundColor: "#414833",
+              paddingTop: 10,
+              paddingBottom: 10,
+              opacity: .9,
             }}
           >
-            Map PlaceHolder
-            <CampgroundMapView campground={campground} />
+            <CampgroundMapView campgroundLat={campgroundLat} campgroundLng={campgroundLng} />
+
           </Col>
         </Row>
       </Container>
