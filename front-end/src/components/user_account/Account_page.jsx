@@ -12,13 +12,17 @@ const Account_page = ({}) => {
   console.log(loggedIn);
   if (loggedIn === null) {
     return (
-      <div>
-        <h2 className="background">Please log in</h2>
-        <Link to="/login">
+      <div style={{paddingTop: "40px"}}>
+        
+      <Container className="background">
+        <br></br>
+        <h2 className="centered">Please log in</h2>
+        <Link className="centered" to="/login">
           <Button id="submit-button" className="button">
             Log In
           </Button>
         </Link>
+      </Container>
       </div>
     );
   } else {
@@ -39,6 +43,7 @@ const Account_page = ({}) => {
     // }, []);
 
     return (
+      <div style={{paddingTop: "40px"}}>
       <Container className="background"
         
       >
@@ -51,6 +56,7 @@ const Account_page = ({}) => {
               > </Favorites_By_User> */}
         </div>
       </Container>
+      </div>
     );
   }
 };

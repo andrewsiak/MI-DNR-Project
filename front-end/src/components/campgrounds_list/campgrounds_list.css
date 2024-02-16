@@ -6,9 +6,10 @@
 .list-group-default {
     list-style-type: none;
     font-size: .5rem;
-    background-color: #212529; 
+    background-color: #656D4A; 
+    border-color: #656D4A;
     opacity: "85%" ;
-    padding-left: 0px;
+    padding-bottom: 0;
     max-height: 600px;
     max-width: 500px;
     overflow:scroll;
