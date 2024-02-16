@@ -50,7 +50,7 @@ const Campground_details = ({ campground }) => {
 
     return (
       <div
-        // className="campground-information-panels"
+        className="campground-information-panel"
         style={{
           backgroundColor: "#333D29",
           opacity: ".8",

@@ -3,7 +3,7 @@
 
 } */
 
-.list-group {
+.list-group-default {
     list-style-type: none;
     font-size: .5rem;
     background-color: #212529; 
@@ -13,4 +13,13 @@
     max-width: 500px;
     overflow:scroll;
     -webkit-overflow-scrolling: touch;
+}
+
+.button-styling {
+font-display: 100;
+background-color: #333D29;
+font-size: 12;
+opacity: ".8";
+color: "white";
+border-color: #FFFCE2;
 }

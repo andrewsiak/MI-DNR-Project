@@ -1,0 +1,30 @@
+.details_header {
+  color: "white";
+}
+
+button#fav-button {
+  background-color: #333d29;
+  opacity: 0.8;
+  color: #fff;
+  border-color: #fffce2;
+}
+
+#fav-button:hover {
+  background-color: #414833;
+  opacity: 0.8;
+  color: #fff;
+  border-color: #fffce2;
+}
+#unfav-button:hover {
+  background-color: #582f0e;
+  opacity: 0.8;
+  color: #fff;
+  border-color: #fffce2;
+}
+
+.campground-information-panel {
+  background-color: #333d29;
+  opacity: 0.8;
+  color: #fffce2;
+  border-color: #fffce2;
+}

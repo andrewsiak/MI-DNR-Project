@@ -22,20 +22,23 @@ const Campground_body = () => {
               setCampgroundFn={setCampground}
             />
           </Col>
-          <Col xs={3}>
-            <Campground_details campground={campground} />
-          </Col>
+         
           <Col
             lg={5}
             style={{
+              height: "100vh",
               backgroundColor: "#414833",
               paddingTop: 10,
               paddingBottom: 10,
               opacity: .9,
             }}
           >
+          { /* add default values below */ }
             <CampgroundMapView campgroundLat={campgroundLat} campgroundLng={campgroundLng} />
 
+          </Col>
+          <Col xs={3}>
+            <Campground_details campground={campground} />
           </Col>
         </Row>
       </Container>

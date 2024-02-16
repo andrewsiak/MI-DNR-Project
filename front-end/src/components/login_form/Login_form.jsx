@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./login_form.css";
 import Container from "react-bootstrap/Container";
 import { Form, Button } from "react-bootstrap";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm({ userId, setUserId }) {
   const [email, setEmail] = useState("");
@@ -22,9 +22,11 @@ function LoginForm({ userId, setUserId }) {
         email,
         password,
       }),
-    }).then((response) => {
+    })
+    .then((response) => {
       if (response.ok) {
-        response.json().then((user) => {
+        response.json()
+    .then((user) => {
           setUserId(user.id);
           localStorage.setItem("userId", user.id);
 
