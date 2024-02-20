@@ -34,7 +34,7 @@ const Campground_body = () => {
             }}
           >
           { /* add default values below */ }
-            {/* <CampgroundMapView campgroundLat={campgroundLat} campgroundLng={campgroundLng} /> */}
+            <CampgroundMapView campgroundLat={campgroundLat} campgroundLng={campgroundLng} />
 
           </Col>
           <Col xs={3}>

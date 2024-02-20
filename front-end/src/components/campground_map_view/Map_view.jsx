@@ -1,35 +1,65 @@
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import Campground_body from "../campground_body/Campground_body";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 // function to implement Google Maps API and
 const CampgroundMapView = ({ campgroundLat, campgroundLng }) => {
-  // const [locationCoords, setLocationCoords] = useState(null);
+  console.log(campgroundLat, campgroundLng);
+  const mapRef = useRef(null)
+  const [mapPosition, setMapPosition] = useState({
+    lat: 45.001,
+    lng: -85.498
+  });
   // or have a default lat and lng 
   // check if locationCoords is null
 
-  console.log(campgroundLat, campgroundLng);
+  console.log(mapPosition);
 
   const containerStyle = {
     width: "100%",
     height: "90vh",
   };
 
- 
+
+  
+  // const locationCoords = {
+    
+  //   coords: {
+  //     lat: campgroundLat,
+  //     lng: campgroundLng,
+  //   },
+
+  //   zoom: 11,
+  // };
 
   // function currentLocation(campgroundLat, campgorundLng) {
 
   // }
+// ~~~~~~~~~~~~~~~~~~~~~
+  // if (campgroundLat === null) {
+  //   const locationCoords = {
+    
+  //     coords: {
+  //       lat: 45.001,
+  //       lng: -85.498,
+  //     },
+  
+  //     zoom: 6,
+  //   };
+  // } else {
+  //   const locationCoords = {
+    
+  //     coords: {
+  //       lat: campgroundLat,
+  //       lng: campgroundLng,
+  //     },
+  
+  //     zoom: 11,
+  //   };
+  // }
 
-  // if (campgroundLat !== null) {
-  const locationCoords = {
-    coords: {
-      lat: campgroundLat,
-      lng: campgroundLng,
-    },
+  // ~~~~~~~~~~~~~~~~~~~~~
 
-    zoom: 11,
-  };
 
 
   // } else {
@@ -52,8 +82,8 @@ const CampgroundMapView = ({ campgroundLat, campgroundLng }) => {
   // console.log(campgroundLat, campgroundLng);
 
   const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+    // id: "google-map-script",
+    // googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
   console.log();
@@ -85,26 +115,26 @@ const CampgroundMapView = ({ campgroundLat, campgroundLng }) => {
     setMap(null);
   }, []);
 
-  return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      zoom={locationCoords.zoom}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
-      center={locationCoords.coords}
-      streetViewControl={false}
+  // return isLoaded ? (
+  //   <GoogleMap
+  //     mapContainerStyle={containerStyle}
+  //     // zoom={mapPosition}
+  //     onLoad={onLoad}
+  //     onUnmount={onUnmount}
+  //     center={mapPosition}
+  //     streetViewControl={false}
 
 
-    >
-      {/* {campground.isMarkerShown && (
-        <Marker position={{ lat: campgroundLat, lng: campgorundLng }} />
-      )} */}
+  //   >
+  //     {/* {campground.isMarkerShown && (
+  //       <Marker position={{ lat: campgroundLat, lng: campgorundLng }} />
+  //     )} */}
 
-      {/* Child components, such as markers, info windows, etc. */}
-    </GoogleMap>
-  ) : (
-    <></>
-  );
+  //     {/* Child components, such as markers, info windows, etc. */}
+  //   </GoogleMap>
+  // ) : (
+  //   <></>
+  // );
 
   return <div> Map PlaceHolder</div>;
 };
