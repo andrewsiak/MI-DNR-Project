@@ -18,7 +18,7 @@ import Account_page from "./components/user_account/Account_page";
 
 function App() {
   const [userId, setUserId] = useState(null);
-  console.log(userId);
+  // console.log(userId);
   useEffect(() => {
     setUserId(localStorage.getItem(localStorage.getItem("userId") || null));
   }, []);

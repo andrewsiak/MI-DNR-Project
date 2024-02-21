@@ -1,0 +1,53 @@
+.div-card-default{
+    padding-top: 20px;
+    
+}
+
+
+.card-default {
+    margin: auto;
+
+    font-size: 18px;
+    padding-top: 20px;
+    align-items: top;
+    vertical-align: center;
+    width: 50%;
+    background-color: #414833;
+    color: #C2C5AA;
+    vertical-align: center;
+    text-align: center;
+    opacity: 90%;
+}
+
+.card-body {
+    font-size: 18px;
+    align-items: top;
+    border: 10px;
+    color: #C2C5AA;
+    text-align: center;
+
+
+
+}
+
+.card-header {
+    
+    font-size: 50px;
+    color: #C2C5AA;
+    align-items: top;
+    vertical-align: center;
+    text-align: center;
+    border-color:#333D29 ;
+    border: 1px;
+
+}    
+
+.button-home-styling {
+    
+    
+    background-color: #333D29;
+    font-size: 12px;
+    color: "white";
+    border-color: #FFFCE2;
+    }
+    

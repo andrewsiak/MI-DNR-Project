@@ -13,6 +13,9 @@ function LoginForm({ userId, setUserId }) {
     event.preventDefault();
     const userLogin = { email, password };
 
+// stretch goal: if logged in - redirect to Your Account page
+// stretch goal: create log out component and include that on account page and navbar
+
     fetch("/api/login", {
       method: "POST",
       headers: {

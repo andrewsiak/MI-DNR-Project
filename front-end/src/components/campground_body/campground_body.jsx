@@ -34,7 +34,11 @@ const Campground_body = () => {
             }}
           >
           { /* add default values below */ }
-            <CampgroundMapView campgroundLat={campgroundLat} campgroundLng={campgroundLng} />
+            <CampgroundMapView 
+            campgroundLat={campgroundLat|| 45.001} 
+            campgroundLng={campgroundLng || -85.498}
+            campgroundZoom={6}
+            />
 
           </Col>
           <Col xs={3}>

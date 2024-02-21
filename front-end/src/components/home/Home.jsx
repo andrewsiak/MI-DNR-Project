@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
-import { Col, Container } from "react-bootstrap";
-import { Route, Routes } from "react-router-dom";
+import { Card, Col, Container, Button } from "react-bootstrap";
+import { Route, Routes, Link } from "react-router-dom";
 import Campground_body from "../campground_body/Campground_body";
 import Account_page from "../user_account/Account_page";
 import LoginForm from "../login_form/Login_form";
 
 const Home = () => {
   return (
-    <Container>
-      <div>Welcome to Michigan!</div>
-      <Routes>
-        <Route path="/campgrounds" element={<Campground_body />} />
-        <Route path="/account" element={<Account_page />} />
-
-        <Route path="/login" element={<LoginForm />} />
-      </Routes>
-      {/* <Row>
-          <Image src="./images/lake-image.jpeg" fluid />
-      </Row> */}
-    </Container>
+    <div className="div-card-default">
+      <Card className="card-default">
+        <Card.Header className="card-head">Welcome to Michigan!</Card.Header>
+        <Card.Body className="card-body">Find your perfect campground in Michigan!</Card.Body>
+        <Link as={Link} to={"campgrounds"}>
+          <Button className="button-home-styling">Find a campground</Button>
+        </Link>
+        <br></br>
+      </Card>
+    </div>
   );
 };
 

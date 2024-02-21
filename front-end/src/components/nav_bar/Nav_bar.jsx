@@ -21,7 +21,7 @@ const Nav_bar = () =>{
 
         <Navbar bg="dark" expand="lg" variant={"dark"}>
           <Container>
-            <Navbar.Brand href="/">Michigan DNR</Navbar.Brand>
+            <Navbar.Brand href="/">Michigan Camping</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">

@@ -50,7 +50,7 @@ const Account_page = ({}) => {
         <div>
           <h2>Welcome back!</h2>
 
-          <div>favorites here</div>
+          {/* <div>favorites here</div> */}
 
           {/* <Favorites_By_User                 
               > </Favorites_By_User> */}
