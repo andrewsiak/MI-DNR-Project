@@ -7,9 +7,10 @@ import { Route } from "react-router-dom";
 
 const Campground_body = () => {
   const [campground, setCampground] = useState({});
-  console.log(campground)
+  console.log(campground);
   const campgroundLat = campground.lat;
   const campgroundLng = campground.lng;
+  const campgroundZoom = null;
 
   // console.log(campground);
   return (
@@ -22,7 +23,7 @@ const Campground_body = () => {
               setCampgroundFn={setCampground}
             />
           </Col>
-         
+
           <Col
             lg={5}
             style={{
@@ -30,16 +31,15 @@ const Campground_body = () => {
               backgroundColor: "#414833",
               paddingTop: 10,
               paddingBottom: 10,
-              opacity: .9,
+              opacity: 0.9,
             }}
           >
-          { /* add default values below */ }
-            <CampgroundMapView 
-            campgroundLat={campgroundLat|| 45.001} 
-            campgroundLng={campgroundLng || -85.498}
-            campgroundZoom={6}
+            {/* add default values below */}
+            <CampgroundMapView
+              campgroundLat={campgroundLat || 45.001}
+              campgroundLng={campgroundLng || -85.498}
+              campgroundZoom={campgroundZoom || 6}
             />
-
           </Col>
           <Col xs={3}>
             <Campground_details campground={campground} />

@@ -1,45 +1,36 @@
-.div-about-default{
-    padding-top: 20px;
-    
+.div-about-default {
+  padding-top: 20px;
 }
 
-
 .about-default {
-    margin: auto;
+  margin: auto;
 
-    font-size: 16px;
-    padding-top: 20px;
-    align-items: top;
-    vertical-align: center;
-    width: 50%;
-    background-color: #414833;
-    color: #C2C5AA;
-    vertical-align: center;
-    text-align: center;
-    opacity: 90%;
+  font-size: 16px;
+  padding-top: 20px;
+  align-items: top;
+  vertical-align: center;
+  width: 50%;
+  background-color: #414833;
+  color: #c2c5aa;
+  vertical-align: center;
+  text-align: center;
+  opacity: 90%;
 }
 
 .about-body {
-    font-size: 16px;
-    align-items: top;
-    border: 10px;
-    color: #C2C5AA;
-    text-align: center;
-
-
-
+  font-size: 16px;
+  align-items: top;
+  border: 10px;
+  color: #c2c5aa;
+  text-align: center;
 }
 
 .about-header {
-    
-    font-size: 24px;
-    color: #C2C5AA;
-    align-items: top;
-    vertical-align: center;
-    text-align: center;
-    border-color:#333D29 ;
-    border: 1px;
-
-}    
-
-    
+  font-size: 24px;
+  color: #c2c5aa;
+  align-items: top;
+  vertical-align: center;
+  text-align: center;
+  border-color: #333d29;
+  border: 1px;
+}

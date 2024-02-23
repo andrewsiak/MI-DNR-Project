@@ -1,9 +1,8 @@
 .card {
-    list-style-type: none;
-    font-size: .8rem;
-    background-color: "#212529"; 
-    opacity: "85%" ;
-    max-height: 600px;
-    max-width: 500px;
-
+  list-style-type: none;
+  font-size: 0.8rem;
+  background-color: "#212529";
+  opacity: "85%";
+  max-height: 600px;
+  max-width: 500px;
 }

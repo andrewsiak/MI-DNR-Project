@@ -6,34 +6,31 @@
 }
 
 .background {
-  background-color: #7F4F24;
+  background-color: #7f4f24;
   align-items: center;
   height: 200px;
   width: 300px;
-  opacity: .9;
-  color: #FFF;
+  opacity: 0.9;
+  color: #fff;
   border-color: "#FFFCE2";
   border-radius: 12px;
   padding-top: 10px;
 }
 
-
 button#submit-button {
-  background-color: #333D29;
+  background-color: #333d29;
   opacity: ".8";
-  color: #FFFCE2;
-  border-color: #FFFCE2;
-  
+  color: #fffce2;
+  border-color: #fffce2;
 }
 
 #submit-button:hover {
-background-color: #582F0E;
-opacity: .8;
-color: #FFFCE2;
-border-color: #FFFCE2;
+  background-color: #582f0e;
+  opacity: 0.8;
+  color: #fffce2;
+  border-color: #fffce2;
 }
 
 .please-log-in {
-  color: #582F0E;
-  
+  color: #582f0e;
 }

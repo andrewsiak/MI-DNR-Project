@@ -26,28 +26,6 @@ const Campground_details = ({ campground }) => {
   if (campground !== null) {
     const [favorite, setFavorite] = useState([]);
 
-    // const [allCampgrounds, setAllCampgrounds] = useState([]);
-    // useEffect(() => {
-    //   fetch("api/campgrounds", {
-    //     method: "GET",
-    //   })
-    //     .then((response) => {
-    //       console.log(response);
-    //       return response.json();
-    //     })
-    //     .then((campgroundData) => {
-    //       setAllCampgrounds(campgroundData);
-    //       // console.log(campgroundData);
-    //     })
-    //     .catch((error) => console.log(error));
-    // }, []);
-
-    // const handleClick = (e) => {
-    //   e.preventDefault();
-    //   console.log("hello");
-    // };
-    // console.log(campground);
-
     return (
       <div
         className="campground-information-panel"

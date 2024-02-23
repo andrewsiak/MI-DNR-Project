@@ -1,14 +1,8 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
+import Container from "react-bootstrap/Container";
 
+const Header = () => {
+  return <div> Header</div>;
+};
 
-
-const Header = () =>{
-    return(
-        <div> Header
-
-        </div>
-    )
-}
-
-export default Header
+export default Header;

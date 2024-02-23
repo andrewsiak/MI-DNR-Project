@@ -45,13 +45,19 @@ const Campground_list = ({ setCampgroundFn }) => {
       //   backgroundColor: "black",
       //   opacity: ".8",
       // }}
-      style={{ backgroundColor: "black", opacity: "85%", color: "#FFFCE2" }}
+      style={{
+        backgroundColor: "black",
+        opacity: "85%",
+        color: "#FFFCE2",
+        height: "px",
+      }}
     >
       <h2 style={{ color: "#FFFCE2" }}>Find a Campground</h2>
 
-      <ListGroup>
+      <ListGroup className="list-group-default">
         {(allCampgrounds ?? []).map((campgroundData) => (
-          <ListGroup.Item className="list-group-default"
+          <ListGroup.Item
+            style={{ backgroundColor: "#656D4A", borderColor: "#656D4A" }}
             key={campgroundData.campground_id}
             // style={{
             //   backgroundColor: "black",
@@ -74,8 +80,8 @@ const Campground_list = ({ setCampgroundFn }) => {
                   borderColor: "#FFFCE2",
                 }}
               >
-                {campgroundData.name} 
-                
+                {campgroundData.name}
+
                 {/* {Favorites_By_User.favorited && ( */}
                 {/* <svg
                   xmlns="http://www.w3.org/2000/svg"

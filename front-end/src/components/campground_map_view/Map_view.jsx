@@ -6,53 +6,31 @@ import React, { useState } from "react";
 const CampgroundMapView = ({
   campgroundLat,
   campgroundLng,
-  campgroundZoom,
+  // campgroundZoom,
 }) => {
-  // const [locationCoords, setLocationCoords] = useState({
-  //   lat: 45.0,
-  //   lng: -85.5
-  // });
-  // or have a default lat and lng
   // check if locationCoords is null
 
-  console.log(campgroundLat, campgroundLng, campgroundZoom);
+  console.log(
+    campgroundLat, 
+    campgroundLng,
+    // campgroundZoom
+    );
+
 
   const containerStyle = {
     width: "100%",
     height: "90vh",
   };
 
-  // function currentLocation(campgroundLat, campgorundLng) {
-
-  // }
-
-  // if (campgroundLat !== null) {
   const locationCoords = {
     coords: {
       lat: campgroundLat,
       lng: campgroundLng,
     },
 
-    zoom: campgroundZoom,
+    zoom: 6
+    // campgroundZoom,
   };
-
-  // } else {
-  //   const currentLocation = {
-  // coords: {
-  //   lat: 45.0,
-  //   lng: -85.5
-  // },
-
-  //     zoom: 6,
-  //   };
-  // }
-  // setLocationCoords(defaultLocation)
-
-  // locationCoords.defaultProps = {
-  //   campgroundLat: 45.00,
-  //   campgroundLng: -85.50,
-  // };
-  // console.log(campgroundLat, campgroundLng);
 
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -61,26 +39,9 @@ const CampgroundMapView = ({
 
   console.log();
 
-  //   let currentLocation = {
-  //     coords: {
-  //       lat: campgroundLat,
-  //       lng: campgroundLng,
-  //     },
-  //     zoom: 11,
-
-  // }
-  // setLocationCoords(currentLocation)
-
-  // if (!isLoaded) {
-  //   return <SkeletonText />
-  // }
-
   const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(map) {
-    // const bounds = new window.google.maps.LatLngBounds(center.coords);
-    // map.fitBounds(bounds);
-
     setMap(map);
   }, []);
 
@@ -98,11 +59,6 @@ const CampgroundMapView = ({
       streetViewControl={false}
     >
       <Marker position={locationCoords.coords} />
-
-      {/* {campground.isMarkerShown && (
-      )} */}
-
-      {/* Child components, such as markers, info windows, etc. */}
     </GoogleMap>
   ) : (
     <></>

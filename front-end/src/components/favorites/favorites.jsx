@@ -5,7 +5,7 @@ import Campground_list from "../campgrounds_list/Campgrounds_list";
 const Favorites_By_User = ({}) => {
   const [campgroundFavorites, setCampgroundFavorites] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
-  const {user_id} = useParams();
+  const { user_id } = useParams();
 
   useEffect(() => {
     fetch(`/api/favorites/${favorites.campground_id}`)
@@ -51,7 +51,5 @@ const Favorites_By_User = ({}) => {
         setErrors(error);
       });
   };
-
- 
 };
 export default Favorites_By_User;

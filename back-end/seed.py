@@ -65,6 +65,7 @@ for map_feature in features:
         geometry["rings"][0][0][1]
     )
 
+# note about nested lists/arrays logic
     # # create variable to find geometry dictionary
     # geometry = map_feature["geometry"]
     # rings = geometry["rings"]
@@ -93,18 +94,3 @@ for n in range(10):
 model.db.session.add_all(maps_in_db)
 model.db.session.commit()
 
-
-# movies_in_db = []
-# for movie in movie_data:
-#     title, overview, poster_path = (
-#         movie["title"],
-#         movie["overview"],
-#         movie["poster_path"],
-#     )
-#     release_date = datetime.strptime(movie["release_date"], "%Y-%m-%d")
-
-#     db_movie = crud.create_movie(title, overview, release_date, poster_path)
-#     movies_in_db.append(db_movie)
-
-# model.db.session.add_all(movies_in_db)
-# model.db.session.commit()

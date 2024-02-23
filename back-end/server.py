@@ -97,12 +97,6 @@ if __name__ == "__main__":
 #     return jsonify(user_info)
 
 
-
-
-
-
-# 
-
 # @app.route("/api/register_user")
 # def register_user():
 #     email = request.json["email"]
@@ -124,23 +118,5 @@ if __name__ == "__main__":
 
 
 
-# Will need to use the below - modify for this project api
-# @app.route('/api/campgrounds')
-# def get_campgrounds():
-#     campgrounds = Campground.query.all()
-#     return jsonify({melon.melon_code: melon.to_dict() for melon in melons})
 
-    # def toJson(self):
-    #     return json.dumps(self, default=lambda o: o.__dict__)
-    
-# @app.route('/api/melons')
-# def get_melons():
-#     melons = Melon.query.all()
-
-
-#  pulled from react shopping site solution exercise:
-    #  melon_dicts = []
-    #  for melon in melons:
-    #  melon_dicts = melon.to_dict() for melon in melons
-    #  return jsonify({melon.melon_code: melon_dicts})
 

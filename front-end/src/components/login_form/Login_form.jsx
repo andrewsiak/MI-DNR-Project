@@ -13,8 +13,8 @@ function LoginForm({ userId, setUserId }) {
     event.preventDefault();
     const userLogin = { email, password };
 
-// stretch goal: if logged in - redirect to Your Account page
-// stretch goal: create log out component and include that on account page and navbar
+    // stretch goal: if logged in - redirect to Your Account page
+    // stretch goal: create log out component and include that on account page and navbar
 
     fetch("/api/login", {
       method: "POST",
@@ -25,11 +25,9 @@ function LoginForm({ userId, setUserId }) {
         email,
         password,
       }),
-    })
-    .then((response) => {
+    }).then((response) => {
       if (response.ok) {
-        response.json()
-    .then((user) => {
+        response.json().then((user) => {
           setUserId(user.id);
           localStorage.setItem("userId", user.id);
 
