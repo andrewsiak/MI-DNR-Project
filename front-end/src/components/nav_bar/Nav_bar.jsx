@@ -20,7 +20,6 @@ import LoginForm from "../login_form/Login_form";
 import Campground from "../campgrounds_list/Campgrounds_list";
 
 const Nav_bar = () => {
-  // const [active, setActive] = useState("FirstCard");
 
   return (
     <div>
@@ -58,6 +57,4 @@ const Nav_bar = () => {
 
 export default Nav_bar;
 
-{
-  /* <Route>"path="/url/:id"</Route> */
-}
+

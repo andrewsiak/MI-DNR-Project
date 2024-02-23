@@ -27,20 +27,7 @@ const Account_page = ({}) => {
     );
   } else {
     const [userAccountInfo, setUserAccountInfo] = useState([]);
-    // useEffect(() => {
-    //   fetch("/account", {
-    //     method: "GET",
-    //   })
-    //     .then((response) => {
-    //       console.log(response);
-    //       return response.json();
-    //     })
-    //     .then((userData) => {
-    //       setAllCampgrounds(userData);
-    //       console.log(userData);
-    //     })
-    //     .catch((error) => console.log(error));
-    // }, []);
+    
 
     return (
       <div className="div-card-default">
@@ -48,10 +35,7 @@ const Account_page = ({}) => {
           <div>
             <h2>Welcome back!</h2>
 
-            {/* <div>favorites here</div> */}
-
-            {/* <Favorites_By_User                 
-              > </Favorites_By_User> */}
+           
           </div>
           <br></br>
         </Card>
