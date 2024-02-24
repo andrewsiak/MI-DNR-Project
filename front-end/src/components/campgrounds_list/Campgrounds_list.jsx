@@ -49,7 +49,8 @@ const Campground_list = ({ setCampgroundFn }) => {
         backgroundColor: "black",
         opacity: "85%",
         color: "#FFFCE2",
-        height: "px",
+        height: "px", 
+        paddingBottom:10
       }}
     >
       <h2 style={{ color: "#FFFCE2" }}>Find a Campground</h2>

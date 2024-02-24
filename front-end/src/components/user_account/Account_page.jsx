@@ -14,7 +14,6 @@ const Account_page = ({}) => {
     return (
       <div className="div-card-default">
         <Card className="card-default">
-          <br></br>
           <h2 className="centered">Please log in</h2>
           <Link to="/login">
             <Button id="submit-button" className="button-home-styling">
