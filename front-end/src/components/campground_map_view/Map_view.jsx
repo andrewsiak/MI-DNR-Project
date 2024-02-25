@@ -19,7 +19,7 @@ const CampgroundMapView = ({
 
   const containerStyle = {
     width: "100%",
-    height: "90vh",
+    height: "85vh",
   };
 
   const locationCoords = {

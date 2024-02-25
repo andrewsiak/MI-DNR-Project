@@ -82,6 +82,11 @@ for map_feature in features:
     db_map = crud.create_map(object_id, acres, district, facility, shape_area, shape_length, lat, lng)
     maps_in_db.append(db_map)
 
+
+model.db.session.add_all(maps_in_db)
+model.db.session.commit()
+
+
 # Create 10 users
 for n in range(10):
     # username = f"testusername{n}"
@@ -91,6 +96,5 @@ for n in range(10):
     user = crud.create_user(email, password)
     model.db.session.add(user)
 
-model.db.session.add_all(maps_in_db)
-model.db.session.commit()
+
 
