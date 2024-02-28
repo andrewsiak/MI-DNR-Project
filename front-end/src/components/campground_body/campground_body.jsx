@@ -27,7 +27,7 @@ const Campground_body = () => {
           <Col
             lg={5}
             style={{
-              height: "100vh",
+              height: "vh",
               backgroundColor: "#414833",
               paddingTop: 10,
               paddingBottom: 10,
